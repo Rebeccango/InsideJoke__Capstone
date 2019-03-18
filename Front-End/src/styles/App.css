@@ -17,6 +17,14 @@ html {
   background-color: #fbd157;
 }
 
+a {
+  text-decoration: none;
+}
+
+footer {
+  height: 20vh;
+}
+
 .img__logo {
   width: 100%;
   height: 100%;
@@ -24,6 +32,16 @@ html {
 }
 
 .footer__slogan {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   text-align: center;
 }
 
@@ -39,6 +57,32 @@ html {
   height: 150px;
   margin: 1rem;
   width: auto;
+}
+
+.header--create {
+  background-color: #53435B;
+}
+
+.header--create h1 {
+  color: #fbd157;
+}
+
+.header--play {
+  background-color: #E76666;
+}
+
+.header--play h1 {
+  color: #fbd157;
+}
+
+.footer--create {
+  background-color: #53435B;
+  width: 100%;
+  height: 20vh;
+}
+
+.footer--create h3 {
+  color: #fbd157;
 }
 
 .homepage {
@@ -94,6 +138,7 @@ html {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  height: 70vh;
 }
 
 .main--style1 form {
@@ -121,7 +166,7 @@ html {
 
 .main--style1 form label input, .main--style1 form label .submit--btn {
   display: block;
-  padding: 1.5rem;
+  padding: 1rem;
   margin: 0.5rem;
   width: 70vw;
   border-radius: 10px;
@@ -129,8 +174,41 @@ html {
 }
 
 .main--style1 form .submit--btn {
-  width: 76vw;
-  padding: 1.5rem;
-  margin: 2.5rem;
+  width: 80vw;
+}
+
+.main__createNewJoke {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 70vh;
+  padding-top: 2rem;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.main__createNewJoke input {
+  border: none;
+  margin: 1.5rem;
+  padding: 1rem;
+  width: 75vw;
+}
+
+.nav__mainmenu {
+  background-color: #53435B;
+  height: 70vh;
+}
+
+.nav__mainmenu .btn--nav {
+  color: whitesmoke;
+  text-align: center;
+  margin: 0.5rem;
 }
 /*# sourceMappingURL=App.css.map */

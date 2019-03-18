@@ -5,6 +5,7 @@ import './styles/App.css';
 import Home from './Components/Home';
 import LoginSignup from './Components/Forms/LoginSignup';
 import MainMenu from './Components/MainMenu';
+import CreateNewForm from './Components/Forms/CreateNewForm';
 
 class App extends Component {
   render() {
@@ -16,6 +17,7 @@ class App extends Component {
               <Route path="/login" render={(routeProps)=>(<LoginSignup {...routeProps}/>)}/> 
               <Route path="/signUp" render={(routeProps)=>(<LoginSignup {...routeProps}/>)}/>
               <Route path="/home/:user" render={(routeProps)=>(<MainMenu {...routeProps}/>)}/>
+              <Route path="/create" render={(routeProps)=>(<CreateNewForm {...routeProps}/>)}/>
           </Switch>
         </Router>
       </div>

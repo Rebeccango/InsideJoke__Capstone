@@ -5,9 +5,9 @@ import Slogan from '../../Assets/slogan';
 export default class FooterSlogan extends React.Component{
     render(){
         return(
-        <footer>
-            <h3 className="footer__slogan">{Slogan}</h3>
-        </footer>
+        <span className="footer__slogan">
+            <h3>{Slogan}</h3>
+        </span>
         )
     }
 }

@@ -1,3 +1,3 @@
-const Slogan = "Remember When life was funny"; 
+const Slogan = "Remember when life was funny"; 
 
 export default Slogan;
