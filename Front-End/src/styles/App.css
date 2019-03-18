@@ -138,7 +138,7 @@ footer {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  height: 70vh;
+  height: 58vh;
 }
 
 .main--style1 form {
@@ -155,7 +155,7 @@ footer {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  height: 70vh;
+  height: 58vh;
   background-color: #53435B;
 }
 
@@ -185,7 +185,7 @@ footer {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  height: 70vh;
+  height: 58vh;
   padding-top: 2rem;
   -ms-flex-pack: distribute;
       justify-content: space-around;
@@ -194,16 +194,28 @@ footer {
           align-items: center;
 }
 
-.main__createNewJoke input {
+.main__createNewJoke form {
+  text-align: center;
+}
+
+.main__createNewJoke form label {
+  margin: none;
+}
+
+.main__createNewJoke form label select {
   border: none;
-  margin: 1.5rem;
+  margin: 1rem;
   padding: 1rem;
   width: 75vw;
 }
 
+.main__createNewJoke form .submit--btn {
+  width: 80vw;
+}
+
 .nav__mainmenu {
   background-color: #53435B;
-  height: 70vh;
+  height: 58vh;
 }
 
 .nav__mainmenu .btn--nav {

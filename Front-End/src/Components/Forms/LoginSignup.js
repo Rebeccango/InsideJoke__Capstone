@@ -1,7 +1,4 @@
 import React from 'react';
-//Assets 
-import Logo from '../../Assets/Logo/InsideJoke_YellowClick/linkedin_banner_image_1.png';
-import Slogan from '../../Assets/slogan.js';
 //components
 import HeaderLogoBanner from '../../Components/Brandelements/HeaderLogoBanner';
 import FooterSlogan from '../Brandelements/FooterSlogan';

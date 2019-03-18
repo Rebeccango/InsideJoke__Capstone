@@ -7,7 +7,8 @@ $Tertiary: #E76666;
 $font-family: 'Poppins', sans-serif;
     //dimensions
 $BannerHeight: 200px;
-$mainHeight: 70vh;
+// $mainHeight: 70vh;
+$mainHeight: 58vh;
 $footerHeight: 20vh;
 //MIXINS
 
@@ -162,11 +163,20 @@ footer{
     justify-content: space-around;
     align-items: center;
 
-    input{
+    form{
+    text-align: center;
+    label{
+    margin: none;
+    select{
         border: none;
-        margin: 1.5rem;
+        margin: 1rem;
         padding: 1rem;
         width: 75vw;
+        }
+    }
+    .submit--btn{
+    width: 80vw;
+        }
     }
 }
 
