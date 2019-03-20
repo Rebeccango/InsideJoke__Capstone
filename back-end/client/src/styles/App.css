@@ -1,0 +1,346 @@
+.main {
+  height: 65vh;
+  padding: 1rem;
+}
+
+.btn {
+  padding: 1rem;
+  margin: 1rem;
+  color: #53435B;
+  font-size: 1rem;
+  border-radius: 10px;
+  border-style: solid;
+  background-color: #E76666;
+}
+
+* {
+  font-family: "Poppins", sans-serif;
+  color: #53435B;
+}
+
+html {
+  background-color: #fbd157;
+}
+
+html a {
+  text-decoration: none;
+}
+
+h5 {
+  font-weight: 300;
+}
+
+.img__logo {
+  height: 30vh;
+  margin: 4rem 0rem;
+}
+
+header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  height: 20vh;
+}
+
+header .header--logo {
+  height: 150px;
+  margin: 1rem 0rem;
+  width: auto;
+}
+
+.header--titlepage {
+  height: 50vh;
+}
+
+.header--mainmenu {
+  height: 30vh;
+}
+
+.header--create {
+  background-color: #53435B;
+}
+
+.header--create h1 {
+  color: #fbd157;
+}
+
+.header--play {
+  background-color: #E76666;
+}
+
+.header--play h1 {
+  color: #fbd157;
+}
+
+footer {
+  width: 100%;
+  height: 10vh;
+}
+
+.footer--create {
+  background-color: #53435B;
+}
+
+.footer--create h3 {
+  color: #fbd157;
+}
+
+.footer--play {
+  background-color: #E76666;
+}
+
+.footer--play h3 {
+  color: #fbd157;
+}
+
+.footer__slogan {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  text-align: center;
+}
+
+.homepage {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.homepage .div__loginRegister {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+}
+
+.homepage .div__loginRegister .btn--signup, .homepage .div__loginRegister .btn--login {
+  color: whitesmoke;
+  width: 80%;
+}
+
+.homepage .header__slogan {
+  text-align: center;
+  margin: auto;
+}
+
+.header--loginSignup {
+  height: 30vh;
+}
+
+.main--loginSignup {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 65vh;
+  height: 60vh;
+}
+
+.main--loginSignup form {
+  height: 55vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 65vh;
+  background-color: #53435B;
+}
+
+.main--loginSignup form label {
+  color: #fbd157;
+  margin-bottom: 0.5rem;
+}
+
+.main--loginSignup form label input, .main--loginSignup form label .submit--btn {
+  display: block;
+  padding: 1rem;
+  margin: 0.5rem;
+  width: 70vw;
+  border-radius: 10px;
+  background-color: whitesmoke;
+}
+
+.main--loginSignup form .submit--btn {
+  width: 80vw;
+}
+
+.main__createNewJoke {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 65vh;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.main__createNewJoke form {
+  text-align: center;
+}
+
+.main__createNewJoke form label {
+  margin: none;
+}
+
+.main__createNewJoke form label select {
+  background-color: whitesmoke;
+  border: none;
+  margin: 1rem;
+  padding: 1rem;
+  width: 75vw;
+}
+
+.main__createNewJoke form .submit--btn {
+  width: 80vw;
+}
+
+.CreateNew--TruthyFalsey {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.CreateNew--TruthyFalsey > * {
+  width: 80vw;
+  text-align: center;
+}
+
+.CreateNew--TruthyFalsey label {
+  text-align: left;
+}
+
+.CreateNew--TruthyFalsey select {
+  display: block;
+  padding: 1rem;
+  width: 80vw;
+}
+
+.CreateNew--TruthyFalsey textarea {
+  width: 80vw;
+  height: 10vh;
+}
+
+.CreateNew--MultipleChoice {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.CreateNew--MultipleChoice label {
+  display: inline-block;
+}
+
+.CreateNew--MultipleChoice label input, .CreateNew--MultipleChoice label textarea {
+  border-radius: 10px;
+  width: 60vw;
+  margin: 0.5rem;
+  padding: 0.25rem;
+  border-style: solid;
+  border-color: white;
+}
+
+.CreateNew--MultipleChoice label textarea {
+  width: 70vw;
+}
+
+.CreateNew--ClosedCaption {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.CreateNew--ClosedCaption input {
+  width: 80vw;
+}
+
+.nav__mainmenu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 1rem;
+  background-color: #53435B;
+  height: 50vh;
+}
+
+.nav__mainmenu .btn--nav {
+  color: whitesmoke;
+  text-align: center;
+  margin: 0.5rem;
+}
+/*# sourceMappingURL=App.css.map */
