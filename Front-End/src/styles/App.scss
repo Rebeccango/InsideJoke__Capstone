@@ -6,15 +6,19 @@ $Tertiary: #E76666;
     //font
 $font-family: 'Poppins', sans-serif;
     //dimensions
-$BannerHeight: 200px;
+$BannerHeight: 20vh;
 // $mainHeight: 70vh;
-$mainHeight: 58vh;
-$footerHeight: 20vh;
+$mainHeight: 64vh;
+$footerHeight: 16vh;
 //MIXINS
 
-@mixin fullscreen(){
+@mixin fullscreen(){ 
     width: 100%;
     height: 100%;
+}
+.main{
+    height: $mainHeight;
+    padding: 1rem;
 }
 
 .btn{
@@ -40,38 +44,40 @@ $footerHeight: 20vh;
 }
 html{
     background-color: $Primary;
-}
-a{
-    text-decoration: none;
+    a{
+        text-decoration: none;
+    }
 }
 
-footer{
-    height: $footerHeight;
+h5{
+    font-weight: 300;
 }
 
 //Branding Elements 
-
 .img__logo{
-    @include fullscreen();
+    height: 30vh;    
     margin: 4rem 0rem;
 }  
 
-.footer__slogan{
-    display:flex;
-    flex-direction: column;
-    justify-content: space-between;
-    text-align: center;
-}
-
 //this is for the banner
-.header--style1{
+
+header{
     display: flex;
     justify-content: space-around;
+    height: $BannerHeight;
     .header--logo{
         height: 150px;
-        margin: 1rem;
+        margin: 1rem 0rem;
         width: auto;
     }
+}
+
+.header--titlepage{
+    height: 50vh;
+}
+
+.header--mainmenu{
+    height: 30vh;
 }
 
 .header--create{
@@ -88,13 +94,29 @@ footer{
     }
 }
 
+footer{
+    width: 100%;
+    height: $footerHeight;
+}
 .footer--create{
     background-color: $Secondary;
-    width: 100%;
-    height: 20vh;
     h3{
         color: $Primary;
     }
+}
+
+.footer--play{
+    background-color: $Tertiary;
+    h3{
+        color: $Primary;
+    }
+}
+
+.footer__slogan{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
 }
 
 //HOMEPAGE ------------------------------------
@@ -159,7 +181,7 @@ footer{
 
 .main__createNewJoke{
     @include mobile-mainsection();
-    padding-top: 2rem;
+    // padding-top: 2rem;
     justify-content: space-around;
     align-items: center;
 
@@ -168,6 +190,7 @@ footer{
     label{
     margin: none;
     select{
+        background-color: whitesmoke;
         border: none;
         margin: 1rem;
         padding: 1rem;
@@ -179,9 +202,57 @@ footer{
         }
     }
 }
+    //TRUTHY FALSY FORM ----------------------
+   .CreateNew--TruthyFalsey{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    & > * {
+        width: 80vw;
+        text-align: center;
+    }
+    label{
+        text-align: left;
+        }
+
+    select{
+        display: block;
+        padding: 1rem;
+        width: 80vw;
+    }
+    textarea{
+        width: 80vw;
+        height: 10vh;
+        }
+    
+    }
+
+    .CreateNew--MultipleChoice{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        label{
+            display:inline-block;
+        input, textarea{
+            border-radius: 10px;
+            width: 60vw;
+            margin: 0.5rem;
+            padding: 0.25rem;
+            border-style: solid;
+            border-color: white;
+            }
+        textarea{
+            width: 70vw;
+            }
+        }
+    }
 
 //MAIN MENU - NAVIGATION BAR ----------------------------
 .nav__mainmenu{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1rem;
     background-color: $Secondary;
     height: $mainHeight;
 

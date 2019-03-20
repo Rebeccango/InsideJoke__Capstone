@@ -23,19 +23,26 @@ export default class CreateNewForm extends React.Component{
             type: e.target.typeofJoke.value,
             group: e.target.group.value
         }
+        
+        console.log();
+        // console.dir(this.createNewJokeForm.current.typeofJoke.value)
         //axios to  make POST request when the time comes
         console.log(newJoke);
+
+        let path = `/createNew/${this.createNewJokeForm.current.typeofJoke.value}`;
+        this.props.history.push(path);
     }
     
     render(){
-        console.log(this.createNewJokeForm);
         // console.log(e.target.typeofJoke.value); //ask Ian why e.target works and ref.work
         
         const {userGroups, ...rest} = this.state
         return(
         <div className="createNewJokeForm">
-            <HeaderTextBanner/>
-            <main className="main__createNewJoke">
+             <header className="header--create">
+                <HeaderTextBanner title="Create"/>
+             </header>
+            <main className="main__createNewJoke main">
                 <form className= "CreateNewForm"
                       ref={this.createNewJokeForm}
                       onSubmit={this.createJoke}>
@@ -44,7 +51,6 @@ export default class CreateNewForm extends React.Component{
                             {jokeTypes.map((joke=>{return <option value = {joke}
                                                                   key = {jokeTypes.findIndex( x => x === joke )}>{joke}
                                                           </option>}))}
-
                         </select>
                     </label>
                     <label> Select a group

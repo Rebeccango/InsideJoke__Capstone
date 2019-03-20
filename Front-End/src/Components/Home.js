@@ -20,14 +20,18 @@ export default class Home extends React.Component{
     render(){
         return(
             <div className="homepage">
-                <HeaderLogo/>
+                <header className="header--titlepage">
+                    <HeaderLogo/>
+                </header>
                 <div className="div__loginRegister">
                     <button className="btn--signup btn"
                             onClick={this.signUp}>Sign Up</button>
                     <button className="btn--login btn"
                             onClick={this.logIn}>Log In</button>
                 </div>
-                <FooterSlogan/>
+                <footer>
+                    <FooterSlogan/>
+                </footer>
             </div>
         )
     }

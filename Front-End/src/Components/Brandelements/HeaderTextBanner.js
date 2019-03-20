@@ -3,10 +3,9 @@ import React from 'react';
 export default class HeaderTextBanner extends React.Component{
     render(){
         return(
-        <header className="header--style1 header--create">
-            <h1 className="header--main">Create</h1>
-            {/* create switch statement pending on url */}
-        </header>
+        <span className="header--style1">
+            <h1 className="header--main">{this.props.title}</h1>
+        </span>
         )
     }
 }

@@ -8,8 +8,10 @@ export default class MainMenu extends React.Component{
     render(){
         return(
             <div className="MainMenu__page">
-                <HeaderLogoBanner/>
-                <nav className="nav__mainmenu main--style1">
+                <header className="header--mainmenu">
+                    <HeaderLogoBanner/>
+                </header>
+                <nav className="nav__mainmenu main">
                     <Link to="/create">
                         <div className="btn--nav btn">Create New Joke</div>
                     </Link>
