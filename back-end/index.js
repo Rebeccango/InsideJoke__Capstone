@@ -6,6 +6,15 @@ const express = require('express');
       app = express();
       PORT = 8080;
 
+const mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost/test');
+
+var db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', function() {
+  console.log(" we're connected!");
+});
+
 const bodyParser = require('body-parser');
 //middleware included in express npm which helps defines some routes, and mounts the router module on a path in the main app.
 const cors  = require('cors');
