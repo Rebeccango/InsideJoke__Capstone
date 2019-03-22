@@ -25,12 +25,14 @@ const shell = {
                 { type: "",
                   auth_groups: [],
                   question: "",
-                  answer: ""
+                  answer: "",
+                  tags: ""
                 },
                 { type: "",
                 auth_groups: [],
                 question: "",
-                answer: ""
+                answer: "",
+                tags:""
                 }
               ]
         }
@@ -38,7 +40,6 @@ const shell = {
 // initiate new variable ----> var userGroupList = [];
   // forEach item in the user_groups: [], push to userGroupList
   // e.g groups.forEach( x => userGroupList.push(x.name));
-
 
 
 //Data Sttucture requirements:
