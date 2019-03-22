@@ -16,7 +16,7 @@ export default class CreateNewForm extends React.Component{
     constructor(){
         super();
         this.state = {
-            form: null,
+            display: "hide",
         // this component will need to pass down props regarding user info in order to create new joke object
             user_id : "fakeID",
             // will need to populate using res.data, but will set default groups as the array object below.  using id 
@@ -35,30 +35,33 @@ export default class CreateNewForm extends React.Component{
         this.createNewJokeForm = React.createRef();
     }
 
-    createJoke = (e) => {
+    initiateJoke = (e) => {
         e.preventDefault();
         var newJoke = {
             type: e.target.typeofJoke.value,
-            group: e.target.group.value
+            auth_group: e.target.group.value
+            // question: e.target.question.value || "",
+            // answer: e.target.answer || "",
+            // tags: ""
         }
         // console.log(this.createNewJokeForm.current.group.value || "didn't work");
         console.log(e.target.group.value || "didn't work");
         this.setState(
             {
-                newJoke:newJoke
+                newJoke:newJoke,
+                display: "show"
             }
         )
         console.log(this.state.newJoke);
-        // console.dir(this.createNewJokeForm.current.typeofJoke.value)
-        //axios to  make POST request when the time comes
-        // console.log(newJoke);
     }
     
-    render(){
-        // console.log(e.target.typeofJoke.value); //ask Ian why e.target works and ref.work
-        // form will have to render different form based on which type of joke is selected, so we will write a function for this 
+    submitJoke = (e) => {
 
-        //cases = jokeTypes[0] - jokeTypes[jokTypes.length-1]
+    }
+    // console.dir(this.createNewJokeForm.current.typeofJoke.value)
+    //axios to  make POST request when the time comes
+    // console.log(newJoke);
+    render(){
         function formType (state) {
             switch(state){  
                 case jokeTypes[0]:
@@ -83,7 +86,7 @@ export default class CreateNewForm extends React.Component{
             <main className="main__createNewJoke main">
                 <form className= "CreateNewForm--part1"
                       ref={this.createNewJokeForm}
-                      onSubmit={this.createJoke}>
+                      onSubmit={this.initiateJoke}>
                     <fieldset>
                         <label> Select the group(s) you would like to give authorization to view your joke && type 
                             <select name="group" type="select">
@@ -97,21 +100,22 @@ export default class CreateNewForm extends React.Component{
                                                             </option>}))}
                             </select>
                         </label>
-                        <input type="submit" value="next >"/>
+                        <button className="next"
+                                onClick={this.initiateJoke}>
+                                Next
+                            </button>
                     </fieldset>
-                {/* HERE IS THE DYNAMIC PART OF THE FORM, which will need to change pending on joke type */}
-                <label> Create new {this.state.newJoke.type}
-                    {formType(this.state.newJoke.type)}
-                </label>
-                </form>
-                <form className= "CreateNewForm--part2"
-                      ref={this.createNewJokeForm}
-                      onSubmit={this.submitJoke}>
+                    <fieldset className={this.state.display}>
+                        <label> Create new {this.state.newJoke.type}
+                            {formType(this.state.newJoke.type)}
+                        </label>
+                    </fieldset>
+                    <input type="submit" value="Create!"/>
                 </form>
             </main>
-            <footer className="footer--create">
+            {/* <footer className="footer--create">
                 <FooterSlogan/>
-            </footer>
+            </footer> */}
         </div>
         )
     }
