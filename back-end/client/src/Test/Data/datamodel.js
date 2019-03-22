@@ -25,7 +25,7 @@ const shell = {
                 { type: "",
                   auth_groups: [],
                   question: "",
-                  answer: "",
+                  answer: [],
                   tags: ""
                 },
                 { type: "",

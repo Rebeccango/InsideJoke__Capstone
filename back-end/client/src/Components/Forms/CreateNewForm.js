@@ -33,13 +33,20 @@ export default class CreateNewForm extends React.Component{
           },
         }
         this.createNewJokeForm = React.createRef();
+
+       // this.initiateJoke = this.initiateJoke.bind(this);
     }
 
     initiateJoke = (e) => {
         e.preventDefault();
+
+       const { group, typeofJoke} = this.createNewJokeForm.current;
+
+        console.log('initial joke', e.target);
+       
         var newJoke = {
-            type: e.target.typeofJoke.value,
-            auth_group: e.target.group.value
+            type: typeofJoke.value,
+            auth_group: group.value
             // question: e.target.question.value || "",
             // answer: e.target.answer || "",
             // tags: ""
@@ -103,7 +110,7 @@ export default class CreateNewForm extends React.Component{
                         <button className="next"
                                 onClick={this.initiateJoke}>
                                 Next
-                            </button>
+                        </button>
                     </fieldset>
                     <fieldset className={this.state.display}>
                         <label> Create new {this.state.newJoke.type}
