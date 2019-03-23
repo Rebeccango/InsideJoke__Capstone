@@ -169,4 +169,11 @@ input, button, select {
       -ms-flex-pack: start;
           justify-content: flex-start;
 }
+
+.playCard {
+  width: 300px;
+  height: 400px;
+  background-color: #E76666;
+  border-radius: 10px;
+}
 /*# sourceMappingURL=App.css.map */

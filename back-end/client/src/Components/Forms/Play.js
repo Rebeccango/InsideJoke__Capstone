@@ -1,40 +1,52 @@
 import React from 'react';
+import defaultUserGroups from '../Forms/default_UserGroups';
+import Playlist from '../Playlist';
 
 export default class Play extends React.Component{ 
     constructor(){
         super();
         this.state = {
-            test: ""
+            formdisplay: "show",
+            gamedisplay: "hide"
         }
     }
 
     playMode = (e) => {
         e.preventDefault();
+        
+        this.setState({
+            formdisplay: "hide",
+            gamedisplay: "show"
+        })
+
+        console.log(e.target.playgroup.value);
         console.log('finish writing this function...')
     }
 
     render(){
         return(
-        <form className= "PlayForm"
-            ref={this.playForm}
-            onSubmit={this.playMode}>
-          <h1>Create A New Joke</h1>
-          <fieldset name="type_group ">
-              <label> Select the group(s) you would like to play with today: 
-                  <span className="form--part1">
-                      <select name="group" type="select">
-                          {/* {user_groups.map((group=>{return <option value = {group}
-                                                                  key = {user_groups.findIndex( x=> x=== group)}>{group}
-                                                                  </option>}))} */}
-                      </select>
-                      <button className="next"
-                              onClick={this.initiate}>
-                              Next
-                      </button>
-                  </span>
-              </label>
-          </fieldset>
-        </form>
+        <main>
+            <form ref={this.playForm}
+                onSubmit={this.playMode}
+                className={this.state.formdisplay}>
+            <h1>Play Time!</h1>
+                <label> Select the group of friends you're playing with: 
+                        <select name="playgroup" type="select">
+                            {defaultUserGroups.map((group=>{return <option value = {group}
+                                                                    key = {defaultUserGroups.findIndex( x=> x=== group)}>{group}
+                                                                    </option>}))}
+                        </select>
+                        <input type="submit" 
+                                className="next"
+                                onClick={this.initiate}>
+                        
+                        </input>
+                </label>
+            </form>
+            <span className={this.state.gamedisplay}>
+                <Playlist/>
+            </span>
+        </main>
         )
     }
 }

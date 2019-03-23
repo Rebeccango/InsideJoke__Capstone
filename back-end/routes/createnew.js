@@ -17,7 +17,7 @@ router.post('/', (req, res)=>{
     const joke = new joke_db({
         author: req.body.author,
         type: req.body.type,
-        auth_groups: req.body.auth_groups,
+        auth_group: req.body.auth_group,
         question: req.body.question,
         answer: req.body.answer,
         choices: req.body.choices || null,
