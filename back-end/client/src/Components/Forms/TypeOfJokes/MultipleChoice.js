@@ -4,16 +4,17 @@ import React from 'react';
 export default class MultipleChoice extends React.Component{
     render(){
         return(
-            <fieldset> 
-                <label> Enter Multiple Choice here:
-                    <textarea name="multiplechoice--question" placeholder="Enter your question here"/>
+            <span> 
+                <label> Enter question here:
+                    <textarea name="question" placeholder="Enter your question here" required/>
                 </label>
-                <label> Acceptable answers:
-                    A.)<input name="answer-a" placeholder="first answer"/>
-                    B.)<input name="answer-b" placeholder="first answer"/>
-                    C.)<input name="answer-c" placeholder="first answer"/>
+                <label> Enter possible answers using a comma separated list:
+                    <input name="choices" placeholder="e.g: a, b, c " required/>
                 </label>
-            </fieldset>
+                <label> Enter the correct answer in the input below:
+                    <input name="answer" placeholder="write the answer below" required/>
+                </label>
+            </span>
         )
     }
 }

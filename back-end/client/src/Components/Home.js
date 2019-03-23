@@ -1,16 +1,14 @@
 import React from 'react';
-//Components
-import HeaderLogo from './Brandelements/HeaderLogoLarge';
-import FooterSlogan from '../Components/Brandelements/FooterSlogan';
+import { Link } from 'react-router-dom';
 
 
 export default class Home extends React.Component{
 
     // will most likley replace with links
-    signUp = ()=>{
-        const path = "/signUp";
-        this.props.history.push(path);
-    }
+    // signUp = ()=>{
+    //     const path = "/signUp";
+    //     this.props.history.push(path);
+    // }
 
     logIn = ()=>{
         const path = "/logIn";
@@ -19,20 +17,16 @@ export default class Home extends React.Component{
 
     render(){
         return(
-            <div className="homepage">
-                <header className="header--titlepage">
-                    <HeaderLogo/>
-                </header>
+            <main className="homepage">
                 <div className="div__loginRegister">
-                    <button className="btn--signup btn"
-                            onClick={this.signUp}>Sign Up</button>
+                    <Link to="/signUp">
+                        <button className="btn--signup btn"
+                                onClick={this.signUp}>Sign Up</button>
+                    </Link>
                     <button className="btn--login btn"
                             onClick={this.logIn}>Log In</button>
                 </div>
-                <footer>
-                    <FooterSlogan/>
-                </footer>
-            </div>
+            </main>
         )
     }
 }

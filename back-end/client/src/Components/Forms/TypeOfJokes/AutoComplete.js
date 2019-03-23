@@ -4,15 +4,14 @@ import React from 'react';
 export default class AutoComplete extends React.Component{
     render(){
         return(
-            <fieldset> 
-                <label> Write your statemnet below, identify the fields you wouldl like to blank out:
-                    <input name="answer-a" placeholder="first answer"/>
+            <span> 
+                <label>Write your statemnet below, identify the fields you wouldl like to blank out using "_____":
+                    <input name="question" placeholder="e.g when I say potato, you say ______?"/>
                 </label>
-                <label> Acceptable answers:
-                    <input name="blank--a" placeholder="first answer"/>
-                    <input name="blank-b" placeholder="first answer"/>
+                <label>Please write the answer below:
+                    <input name="answer" placeholder="potato"/>
                 </label>
-            </fieldset>
+            </span>
         )
     }
 }

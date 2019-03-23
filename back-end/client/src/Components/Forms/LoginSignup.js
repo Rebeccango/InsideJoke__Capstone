@@ -1,8 +1,5 @@
 import React from 'react';
 //components
-import HeaderLogoBanner from '../../Components/Brandelements/HeaderLogoBanner';
-import FooterSlogan from '../Brandelements/FooterSlogan';
-
 
 export default class LoginSignup extends React.Component{
     constructor(){
@@ -20,10 +17,6 @@ export default class LoginSignup extends React.Component{
     render(){
         return(
             <div className="loginSignup">
-            <header className="header--loginSignup">
-                <HeaderLogoBanner/>
-            </header>
-                <main className="main--loginSignup">
                     <form className="form--loginSignup"
                           onSubmit={this.redirect}>
                         <label>Username
@@ -34,8 +27,6 @@ export default class LoginSignup extends React.Component{
                         </label>
                         <input type="submit" className="submit--btn btn"/>
                     </form>
-                </main>
-                <FooterSlogan/>
             </div>
         )
     }

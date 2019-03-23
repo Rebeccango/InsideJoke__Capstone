@@ -1,4 +1,4 @@
-const jokeTypes = ["Truthy Or Falsey", "Multiple Choice", "Closed Caption", "Auto Complete"];
+const jokeTypes = ["Truthy Or Falsey", "Multiple Choice", "Auto Complete"];
 
 
 export default jokeTypes;
