@@ -28,7 +28,7 @@ export default class CreateNewForm extends React.Component{
         this.createNewJokeForm = React.createRef();
     }
 
-    initiateJoke = (e) => {
+    initiate = (e) => {
         e.preventDefault();
 
        const { group, typeofJoke} = this.createNewJokeForm.current;
@@ -45,7 +45,6 @@ export default class CreateNewForm extends React.Component{
                 display: "show"
             }
         )
-        console.log(this.state.newJoke);
     }
     
     submitJoke = (e) => {
@@ -53,6 +52,7 @@ export default class CreateNewForm extends React.Component{
     //    const { group, typeofJoke, question, answer, choices} = this.createNewJokeForm.current;
         if(this.state.newJoke.type == jokeTypes[1] ){
             var newJoke = {
+                author: this.state.user_id,
                 type: e.target.typeofJoke.value,
                 auth_group: e.target.group.value,
                 question: e.target.question.value,
@@ -62,18 +62,31 @@ export default class CreateNewForm extends React.Component{
         }
         else{
             var newJoke = {
+                author: this.state.user_id,
                 type: e.target.typeofJoke.value,
                 auth_group: e.target.group.value,
                 question: e.target.question.value,
                 answer: e.target.answer.value,
             }
         }
-
         this.setState(
             {
                 newJoke:newJoke,
             }
         )
+        
+        axios({
+            method: 'post',
+            url: '/createnew',
+            data: newJoke,
+          })
+          .then((res)=>{
+              console.log(res)
+          })
+          .catch((err)=>{
+              console.log(err)
+          })
+
         console.log(this.state.newJoke);
         console.log('Hi look here');
 
@@ -117,7 +130,7 @@ export default class CreateNewForm extends React.Component{
                                                                 </option>}))}
                                 </select>
                                 <button className="next"
-                                        onClick={this.initiateJoke}>
+                                        onClick={this.initiate}>
                                         Next
                                 </button>
                             </span>

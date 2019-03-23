@@ -9,6 +9,7 @@ import Home from './Components/Home';
 import LoginSignup from './Components/Forms/LoginSignup';
 import MainMenu from './Components/MainMenu';
 import CreateNewForm from './Components/Forms/CreateNewForm';
+import Play from './Components/Forms/Play';
 //Joke templates 
 // import AutoComplete from './Components/Forms/TypeOfJokes/AutoComplete';
 // import ClosedCaption from './Components/Forms/TypeOfJokes/ClosedCaption';
@@ -34,7 +35,8 @@ class App extends Component {
               <Route path="/login" render={(routeProps)=>(<LoginSignup {...routeProps}/>)}/> 
               <Route path="/signUp" render={(routeProps)=>(<LoginSignup {...routeProps}/>)}/>
               <Route path="/home/:user" render={(routeProps)=>(<MainMenu {...routeProps}/>)}/>
-              <Route path="/create" render={(routeProps)=>(<CreateNewForm {...routeProps}/>)}/> */}
+              <Route path="/create" render={(routeProps)=>(<CreateNewForm {...routeProps}/>)}/>
+              <Route path="/play" render={(routeProps)=>(<Play {...routeProps}/>)}/>
           </Switch>
         <Footer/>
         </div>

@@ -6,8 +6,14 @@ const mongoose = require('mongoose');
 
 // module.exports = mongoose.model('jokeExpNm', joke)
 
-let newjoke = new mongoose.Schema({
-    
+let joke = new mongoose.Schema({
+        author: String,
+        type: String,
+        auth_group: String,
+        question: String,
+        choices: String,
+        answer: String,
+        tags:String
 })
 
-module.exports = mongoose.model('joke_db', newjoke)
+module.exports = mongoose.model('joke_db', joke)
