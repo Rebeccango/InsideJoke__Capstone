@@ -16,4 +16,6 @@ let joke = new mongoose.Schema({
         tags:String
 })
 
+joke.set('toObject', { getters: true });
+
 module.exports = mongoose.model('joke_db', joke)

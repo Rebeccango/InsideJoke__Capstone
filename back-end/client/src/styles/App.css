@@ -173,7 +173,19 @@ input, button, select {
 .playCard {
   width: 300px;
   height: 400px;
-  background-color: #E76666;
   border-radius: 10px;
+  margin: auto;
+}
+
+.playCard .displayquestion {
+  background-color: #E76666;
+}
+
+.playCard .display--options {
+  background-color: #E76666;
+}
+
+.playCard .displayanswer {
+  background-color: #E76666;
 }
 /*# sourceMappingURL=App.css.map */

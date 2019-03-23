@@ -4,7 +4,6 @@ const mongoose = require('mongoose');
 const joke_db = require('../Data/mongoose.js');
 
 
-
 router.get('/', (req, res)=>{
     joke_db
     .find({
@@ -12,7 +11,7 @@ router.get('/', (req, res)=>{
     })
     .then(doc=> {
         console.log(doc);
-        res.json(doc);
+        res.json(doc)
     })
     .catch(err=> {
         console.log(err)

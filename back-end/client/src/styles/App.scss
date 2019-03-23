@@ -176,6 +176,18 @@ button{
 .playCard{
     width: 300px;
     height: 400px;
-    background-color: $Tertiary;
     border-radius: 10px;
+    margin: auto;
+    
+    .displayquestion{
+    background-color: $Tertiary;
+
+    }
+    .display--options{
+    background-color: $Tertiary;
+   
+    }
+    .displayanswer{
+    background-color: $Tertiary;
+    }
 }
