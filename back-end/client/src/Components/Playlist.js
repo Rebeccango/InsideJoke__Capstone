@@ -23,13 +23,8 @@ export default class Playlist extends React.Component {
             return null;
         }
     }
-    componentDidMount(){
-//work around using sample data 
-        this.setState({
-            playlist: SampleData,
-            playingMax: SampleData.length - 1
-        })
-
+    componentWillMount(){
+        
         axios.get('/jokes')
         .then((res)=>{
             console.log(res.data)
@@ -44,14 +39,39 @@ export default class Playlist extends React.Component {
         })
     }
 
+    componentDidMount(){
+//work around using sample data 
+        // this.setState({
+        //     playlist: SampleData,
+        //     playingMax: SampleData.length - 1
+        // })
+
+        // axios.get('/jokes')
+        // .then((res)=>{
+        //     console.log(res.data)
+        //     var playlist = res.data;
+        //     this.setState({
+        //         playlist: playlist,
+        //         playingMax: playlist.length - 1
+        //     })
+        // })
+        // .catch((err)=>{
+        //     console.log(err)
+        // })
+    }
+
     render(){
 
         // const {answer, auth_group, author, choices, question, type} = this.state.playlist
-        // const playlist = this.state.playlist;
+        const playlist = this.state.playlist;
 
-        // console.log(playlist[0]);
-        // const one = (playlist[0].question);
-        // console.log(typeof one);
+        if (playlist.length === 0){
+            return null;
+        }
+
+        console.log(playlist[0]);
+        const one = (playlist[0]);
+        console.log(one);
         // console.log(one.answer);
 
         const sampledata = this.state.SampleData;

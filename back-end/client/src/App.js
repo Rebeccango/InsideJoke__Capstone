@@ -6,7 +6,8 @@ import Header from './Components/layout/Header';
 import Footer from './Components/layout/Footer';
 
 import Home from './Components/Home';
-import LoginSignup from './Components/Forms/LoginSignup';
+import Login from './Components/Forms/Login';
+import Signup from './Components/Forms/Signup';
 import MainMenu from './Components/MainMenu';
 import CreateNewForm from './Components/Forms/CreateNewForm';
 import Play from './Components/Forms/Play';
@@ -29,16 +30,16 @@ class App extends Component {
     return (
       <Router>
         <div className="App">
-        <Header/>
+          {/* <Header/> */}
           <Switch>
               <Route exact path="/" component={Home}/>
-              <Route path="/login" render={(routeProps)=>(<LoginSignup {...routeProps}/>)}/> 
-              <Route path="/signUp" render={(routeProps)=>(<LoginSignup {...routeProps}/>)}/>
+              <Route path="/login" render={(routeProps)=>(<Login {...routeProps}/>)}/> 
+              <Route path="/signUp" render={(routeProps)=>(<Signup {...routeProps}/>)}/>
               <Route path="/home/:user" render={(routeProps)=>(<MainMenu {...routeProps}/>)}/>
               <Route path="/create" render={(routeProps)=>(<CreateNewForm {...routeProps}/>)}/>
               <Route path="/play" render={(routeProps)=>(<Play {...routeProps}/>)}/>
           </Switch>
-        <Footer/>
+        {/* <Footer/> */}
         </div>
       </Router>
     );

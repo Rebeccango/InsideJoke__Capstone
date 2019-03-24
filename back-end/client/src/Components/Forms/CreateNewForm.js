@@ -8,6 +8,10 @@ import MultipleChoice from './TypeOfJokes/MultipleChoice';
 import TruthyFalsey from './TypeOfJokes/TruthyFalsey';
 import AutoComplete from './TypeOfJokes/AutoComplete';
 
+import Header from '../layout/Header';
+import Footer from '../layout/Footer';
+
+
 
 export default class CreateNewForm extends React.Component{
     constructor(){
@@ -111,6 +115,8 @@ export default class CreateNewForm extends React.Component{
         }
         const {user_groups, ...rest} = this.state
         return(
+        <>
+        <Header/>
         <main className="createNewJokeForm">
                 <form className= "CreateNewForm"
                       ref={this.createNewJokeForm}
@@ -153,6 +159,8 @@ export default class CreateNewForm extends React.Component{
                     </span>
                 </form>
         </main>
+        <Footer/>
+        </>
         )
     }
 }

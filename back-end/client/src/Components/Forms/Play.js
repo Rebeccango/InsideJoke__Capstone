@@ -2,6 +2,10 @@ import React from 'react';
 import defaultUserGroups from '../Forms/default_UserGroups';
 import Playlist from '../Playlist';
 
+import Header from '../layout/Header';
+import Footer from '../layout/Footer';
+
+
 export default class Play extends React.Component{ 
     constructor(){
         super();
@@ -25,6 +29,8 @@ export default class Play extends React.Component{
 
     render(){
         return(
+        <>
+        <Header/>
         <main>
             <form ref={this.playForm}
                 onSubmit={this.playMode}
@@ -47,6 +53,8 @@ export default class Play extends React.Component{
                 <Playlist/>
             </span>
         </main>
+        <Footer/>
+        </>
         )
     }
 }

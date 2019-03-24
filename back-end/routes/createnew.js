@@ -1,14 +1,54 @@
 const express = require('express');
 const router = express.Router();
-// const uuid = require('uuid[v1|v2|v3|v4]');
-//test data 
-// const userData = require('../test/data/joke.js');
 
 const joke_db = require('../Data/mongoose.js');
-//Example 
-// router.get('/', (req, res) => {
-//     res.json(recipes);
-// })
+const user = require('../Data/User.js');
+const groups = require('../Data/Groups.js');
+
+router.post('/group', (req, res)=>{
+    console.log(req.body);
+     console.log(jokeExpNm);
+     const newGroup = new groups({
+        admin: {
+            name: "Rebecca Ngo",
+        },
+        group: {
+            alias: "Family",
+            members_name: ["Rebecca", "Jessica", "Micke", "Henry"],
+        }
+         });
+ 
+     newGroup.save().then(doc => {
+         console.log(doc);
+         res.send('hellow');
+         
+     }).catch(err => {
+         console.error(err);
+         res.status(500).send('error');
+     });
+ })
+ 
+
+router.post('/user', (req, res)=>{
+   console.log(req.body);
+    console.log(jokeExpNm);
+    const newUser = new user({
+        name: "Rebecca Ngo",
+        email: "rebeccango.ngo@gmail.com",
+        password: "Bacon1",
+        created: Date.now
+    });
+
+    newUser.save().then(doc => {
+        console.log(doc);
+        res.send('hellow');
+        
+    }).catch(err => {
+        console.error(err);
+        res.status(500).send('error');
+    });
+})
+
 
 router.post('/', (req, res)=>{
     // res.json(jokeExpNm);
