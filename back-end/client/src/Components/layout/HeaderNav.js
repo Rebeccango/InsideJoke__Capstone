@@ -25,10 +25,7 @@ export default class Header extends React.Component{
                             <h5 className="a--nav">Review</h5>
                         </Link>
                     </div>
-                    <div className="userAvatar">
-                        <img src=""
-                             className="userAvatar"/>
-                    </div>
+                    <div className="userAvatar"></div>
                 </nav>
             </header>
         )

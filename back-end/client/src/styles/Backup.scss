@@ -1,0 +1,336 @@
+
+
+//VARIABLES 
+    // Media query parameters
+$mobile: 320px;
+$tablet: 768px;
+$desktop: 1440px; 
+    //Colour Palette
+$Primary: rgb(251, 209, 87);
+$Secondary:#53435B;
+$Tertiary: #E76666;
+$label: white;
+    //font
+$font-family: 'Poppins', sans-serif;
+    //dimensions
+//MIXINS
+@mixin block-responsive{
+display: block;
+@media (min-width: $tablet) {
+display: inline-block;
+}
+@media (min-width: $desktop) {
+display: inline-block;
+}
+}
+
+//GENERAL----------------------------------
+*{
+    font-family: $font-family;
+    color: $Secondary; 
+}
+html{
+    // background-color: $Primary;
+    a{
+        text-decoration: none;
+    }
+}
+
+.currentpage{
+    border-bottom: solid #FAFAFA 5px;
+    color: #FAFAFA;
+    width: 100%;
+    font-family: "Poppins", sans-serif;
+    padding-bottom: 23px;
+    padding-top: 17px;
+    @media (min-width: $tablet) {
+        width: 80px;
+        margin: 0px 28px;        
+        padding: 28px 0px;
+    }
+}
+
+.hide {
+    display: none;
+}
+
+.show{
+    display: block;
+}
+
+//PAGE LAYOUT COMPONENTS -----------------------------
+
+    //HEADER------------------------
+    header{
+        // @include label;
+        background-color: $Primary;
+        color: $Secondary;
+        // height: 80px;
+        width: 100%;
+        display: flex;
+        flex-direction: column; 
+        justify-content: flex-start;
+        flex-wrap: no-wrap;
+        @media (min-width: $tablet) {
+            padding: 0px 24px;
+            display: flex;
+            flex-direction: row;  
+        }
+            @media (min-width: $desktop) {
+                padding: 0px 0px  0px 180px;
+            }
+        & *, h1{
+            display: inline-block;
+        }
+
+        .header__nav{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+        h1{
+            padding: 0.25rem 1rem;
+        }
+    //     .header__nav, .header__div--links{
+    //         @include block-responsive();
+    //     }
+    }
+    
+    .a--nav{
+        color: $Secondary;
+        display: inline-block;
+        text-align: center;
+        width: 49%;
+        margin: 0.5rem; 
+        padding-bottom: 8px;
+        padding-top: 16px;
+        text-decoration: none;
+        @media (min-width: $tablet) {
+            width: 80px;
+            margin: 0px 28px;
+            padding: 28px 0px;
+            }
+        }
+    // .a--nav:hover{
+    //     @extend .currentpage;
+    //     background-color: $Tertiary; 
+    // }
+
+    //FOOTER ------------------
+footer{
+    @extend header;
+    display: absolute;
+    bottom: 80px;
+    width: 100%;
+    text-align: center;
+
+    .a--footer{
+        @extend .a--nav;
+        width: 100%;
+    }
+}
+
+//---------------
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 1rem;
+    height: 50vw;
+
+    fieldset {
+        margin: 1rem auto;
+    }
+}
+
+// CREATE NEW FORM -----------------
+.form--part1{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+}
+
+textarea{
+    display: block;
+    padding: 1rem;
+    width: 80vw;
+}
+
+input, select {
+    margin: 2rem;
+    padding: 0.5rem;
+}
+
+.show{
+ input{
+        display: block;
+        width: 50vw;
+        margin: 1rem;
+    }
+}
+
+button{
+    @extend input;
+}
+
+.span--submit{
+    display: flex;
+    justify-content: flex-start;
+}
+
+//PLAYCARD -----------------
+
+.playCard{
+    width: 300px;
+    height: 400px;
+    border-radius: 10px;
+    margin: auto;
+    
+    .displayquestion{
+    background-color: $Tertiary;
+
+    }
+    .display--options{
+    background-color: $Tertiary;
+   
+    }
+    .displayanswer{
+    background-color: $Tertiary;
+    }
+}
+
+//HOMEPAGE ---- LOGING /REGISTER
+.homepage{
+    width: 100%;
+    height: 100vh;
+    justify-content: flex-start;
+    background-image: url('../Assets/Background/tiles.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    .header--homepage{
+        color: whitesmoke;
+        font-size: 50px;
+        margin-top: 15vh;
+        margin-bottom: 10vh;
+    }
+    .div__loginRegister{
+        display: flex;
+        flex-direction: column;
+        button{
+            border-radius: 15px;
+            padding: 1rem;
+            background-color: indianred;
+            font-weight: 600;
+            width: 400px;
+            margin: 1rem;
+        }
+    }
+}
+
+
+//MODAL ----------------
+
+.loginSignupPage{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    background-image: url('../Assets/Background/tiles.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    .Signup--modal{
+        padding: 1.5rem;
+        background-color: whitesmoke;
+        width: 250px;
+        height: 600px;
+        border-radius: 4px; 
+        text-align: left;
+        input{
+        display: block;
+        margin: 0.5rem auto;
+        }
+        fieldset{
+        border-style: none;
+        }
+        .submit--btn{
+         margin: 2rem auto;
+         border-style: none;
+         background-color: $Tertiary;
+         width: 80%;
+         border-radius: 4px;
+        }
+        .close--btn{
+        @extend .submit--btn;
+        background-color: whitesmoke;
+        &:hover{
+        background-color: $Tertiary;
+            }
+        }
+    }
+    .login--modal{
+        padding: 1.5rem;
+        background-color: whitesmoke;
+        width: 500px;
+        height: 450px;
+        border-radius: 4px;
+        }
+    .header--modal{
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        }
+        form{
+            text-align: center;
+            label{
+            display: block;
+            .submit--btn{
+                border-radius: 15px;
+                padding: 1rem;
+                background-color: indianred;
+                font-weight: 600;
+                width: 80%;
+                margin: 0.75rem;
+        }
+            }
+    }
+}
+
+
+//USER AVATAR --------------
+.userAvatar{
+    background-color: gray;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+//USER PROFILE 
+.header--userprofilecontainer{
+    display: flex;
+    // flex-direction: column;
+    align-items: center;
+    & > * {
+        margin: auto 0.25rem;
+    }
+}
+
+
+a{
+    display: block;
+    .a--mainmenu{
+        height: 50px;
+        width: 40vw;
+        text-align: center;
+        margin: 1rem;
+        padding: 1rem;
+        border-radius: 10px;
+        &:hover{
+            background-color: powderblue;
+        }
+    }
+}

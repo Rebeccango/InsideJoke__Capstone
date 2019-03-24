@@ -1,12 +1,12 @@
 import React from 'react';
-import defaultUserGroups from '../Forms/default_UserGroups';
+import defaultUserGroups from '../../Assets/data_defaultUsers';
 import Playlist from '../Playlist';
 
-import Header from '../layout/Header';
+import Header from '../layout/HeaderNav';
 import Footer from '../layout/Footer';
 
 
-export default class Play extends React.Component{ 
+export default class TriviaMode extends React.Component{ 
     constructor(){
         super();
         this.state = {

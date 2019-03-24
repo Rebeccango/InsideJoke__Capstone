@@ -1,14 +1,14 @@
 import React from 'react';
 import axios from 'axios';
 //Data 
-import jokeTypes from './joke_types';
-import defaultUserGroups from './default_UserGroups';
+import jokeTypes from '../../Assets/data_joketypes';
+import defaultUserGroups from '../../Assets/data_defaultUsers';
 //FORMS 
 import MultipleChoice from './TypeOfJokes/MultipleChoice';
 import TruthyFalsey from './TypeOfJokes/TruthyFalsey';
 import AutoComplete from './TypeOfJokes/AutoComplete';
 
-import Header from '../layout/Header';
+import Header from '../layout/HeaderNav';
 import Footer from '../layout/Footer';
 
 

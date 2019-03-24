@@ -17,16 +17,11 @@ export default class Signup extends React.Component{
         console.log(loginInfo);
     }
 
-
-    redirect = ()=>{
+    redirect = () => {
         const path = "/home/:user";
         this.props.history.push(path);
     }
 
-    goHome = ()=>{
-        const path = "/";
-        this.props.history.push(path);
-    }
 
     render(){
         return(
@@ -35,27 +30,24 @@ export default class Signup extends React.Component{
                     <h1>Sign up</h1>
                 <form className="form--signup"
                         ref={this.loginForm}
-                        onSubmit={this.redirect}>
+                        onSubmit={this.props.redirect}>
                     <label>Username
                         <input type="text" name="username" placeholder="username" required/>
                     </label>
                     <label>Email
                         <input type="text" name="email" placeholder="email" required/>
                     </label>
-                    {/* <fieldset> */}
-                        <label> Create a password
-                            <input type="password" name="password" placeholder="password" required/>
-                        </label>
-                        <label> Confirm password
-                            <input type="password" name="confirmpassword" placeholder="password" required/>
-                        </label>
-                    {/* </fieldset> */}
+                    <label> Create a password
+                        <input type="password" name="password" placeholder="password" required/>
+                    </label>
+                    <label> Confirm password
+                        <input type="password" name="confirmpassword" placeholder="password" required/>
+                    </label>
                     <input type="submit" 
                             onSubmit={this.collectData}
                             className="submit--btn btn"/>
                     <button className="btn close--btn"
-                    onClick={this.goHome}>Cancel</button>
-
+                        onClick={this.props.goHome}>Cancel</button>
                 </form>
             </div>
         </div>
