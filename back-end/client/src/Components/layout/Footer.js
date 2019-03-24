@@ -10,9 +10,8 @@ export default class Footer extends React.Component{
                     <div className="header__div--links">
                         <Link to="/create">
                             <h5 className="a--footer">Contact Us</h5>
-                        </Link>                    </div>
-                    <div className="userAvatar">
-                    </div>
+                        </Link>   
+                    </div>                 
                 </nav>
             </footer>
         )

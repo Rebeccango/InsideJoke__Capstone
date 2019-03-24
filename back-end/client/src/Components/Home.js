@@ -20,6 +20,9 @@ export default class Home extends React.Component{
                     <Link to="/login">
                         <button className="btn--login btn">Log In</button>
                     </Link>
+                    <Link to="/home/:user">
+                        <button className="btn--login btn">Browse as a Guest</button>
+                    </Link>
                 </div>
             </main>
         )
