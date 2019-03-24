@@ -67,7 +67,7 @@ main{
     background-size: cover;
     background-position: center;
 }
-//TEXST -----------------
+//TEXT -----------------
 h4{
 text-decoration: none;
 font-family: $font-family;
@@ -148,7 +148,6 @@ header{
     }
 }
 // FOOTER ---  ---------------------------------
-
 footer{
     position: relative;
     bottom: 0px;
@@ -196,23 +195,11 @@ footer{
     align-items: baseline;
     width: 100%;
     height: 80vh;
-    padding: 0rem;
     background-color: rgba(0, 0, 0, 0.5);
     @media (min-width: $tablet) {
         align-items:center;
         padding: 1rem;
-        height: 80vh;
-    }
-    div{
-        background-color: whitesmoke;
-        border-radius: 4px;
-        width: auto;
-        height: 90vh;
-        padding: 2rem 1.2rem;
-        @media (min-width: $tablet) {
-            width: 500px;
-            height: 380px;
-        }
+        height: 100vh;
     }
     span{
         background-color: whitesmoke;
@@ -222,7 +209,7 @@ footer{
         padding: 2rem 1.2rem;
         @media (min-width: $tablet) {
             width: 500px;
-            height: 380px;
+            height: 600px;
         }
     } 
 }
@@ -256,7 +243,7 @@ form{
 }
 
 //LOGIN FORM 
-.loginSignupPage{
+.loginPage{
     position: relative;
 
     .close--btn{
@@ -269,6 +256,14 @@ form{
     }
 }
 
+.SignupPage{
+    position: relative;
+    .close--btn{
+        position: absolute;
+        top: -2.75rem;
+        right: -0.75rem;
+    }
+}
 //SIGNUP FORM
 
 // MAIN MENU PAGE ---------------------

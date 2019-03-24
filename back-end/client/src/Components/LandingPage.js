@@ -47,14 +47,16 @@ export default class Home extends React.Component{
     }
 
     render(){
+
+
         return(
             <span>
                 <div className={this.state.form}>
                     <section className="modalwrapper">
-                        <div className={this.state.loginDisplay}>
+                        <span className={this.state.loginDisplay}>
                             <LoginPage goHome={this.goHome}
                                        redirect={this.successRedirect}/>
-                        </div>
+                        </span>
                         <span className={this.state.signupDisplay}>
                             <SignupForm goHome={this.goHome}
                                        redirect={this.successRedirect}/>

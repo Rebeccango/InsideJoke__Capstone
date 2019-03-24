@@ -25,7 +25,7 @@ export default class Signup extends React.Component{
 
     render(){
         return(
-        <div className="loginSignupPage">
+        <div className="SignupPage">
             <div className="Signup--modal">
                     <h1>Sign up</h1>
                 <form className="form--signup"

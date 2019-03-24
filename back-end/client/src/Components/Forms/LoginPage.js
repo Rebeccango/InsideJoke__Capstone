@@ -18,7 +18,7 @@ export default class Login extends React.Component{
     }
     render(){
         return(
-        <div className="loginSignupPage">
+        <div className="loginPage">
                 <h1 className="header--modal" >Login</h1>
                 <button className="btn close--btn"
                         onClick={this.props.goHome}>x</button>
