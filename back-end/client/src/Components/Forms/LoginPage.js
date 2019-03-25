@@ -1,6 +1,9 @@
 import React from 'react';
 // import { Link } from 'react-router-dom';
 
+import soundfile from '../../Assets/Sounds/game_sound.mp3';
+import Sound from 'react-sound';
+
 export default class Login extends React.Component{
     constructor(){
         super();
@@ -19,6 +22,13 @@ export default class Login extends React.Component{
     render(){
         return(
         <div className="loginPage">
+        <Sound  url={soundfile}
+                playStatus={Sound.status.PLAYING}
+                onLoading={this.handleSongLoading}
+                onPlaying={this.handleSongPlaying}
+                onFinishedPlaying={this.handleSongFinishedPlaying}
+                />
+                
                 <h1 className="header--modal" >Login</h1>
                 <button className="btn close--btn"
                         onClick={this.props.goHome}>x</button>

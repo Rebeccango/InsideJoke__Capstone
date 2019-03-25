@@ -22,7 +22,6 @@ export default class Signup extends React.Component{
         this.props.history.push(path);
     }
 
-
     render(){
         return(
         <div className="SignupPage">
@@ -47,7 +46,7 @@ export default class Signup extends React.Component{
                             onSubmit={this.collectData}
                             className="submit--btn btn"/>
                     <button className="btn close--btn"
-                        onClick={this.props.goHome}>Cancel</button>
+                        onClick={this.props.goHome}>Close</button>
                 </form>
             </div>
         </div>

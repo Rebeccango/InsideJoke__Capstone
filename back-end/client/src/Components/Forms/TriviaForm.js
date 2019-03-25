@@ -5,6 +5,9 @@ import Playlist from '../Playlist';
 import Header from '../layout/HeaderNav';
 import Footer from '../layout/Footer';
 
+import soundfile from '../../Assets/Sounds/the_dating_game_1965.mp3';
+import Sound from 'react-sound';
+
 
 export default class TriviaMode extends React.Component{ 
     constructor(){
@@ -31,6 +34,12 @@ export default class TriviaMode extends React.Component{
         return(
         <>
         <Header/>
+        <Sound  url={soundfile}
+                playStatus={Sound.status.PLAYING}
+                onLoading={this.handleSongLoading}
+                onPlaying={this.handleSongPlaying}
+                onFinishedPlaying={this.handleSongFinishedPlaying}
+                />
         <main className="triviaForm">
             <form ref={this.playForm}
                 onSubmit={this.playMode}

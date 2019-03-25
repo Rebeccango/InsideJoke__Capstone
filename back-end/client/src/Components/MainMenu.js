@@ -20,10 +20,10 @@ export default class MainMenu extends React.Component{
                         <Link to="/">
                             <div className="a--mainmenu">Edit & Review</div>
                         </Link>
-                        <Link to="/">
+                        {/* <Link to="/">
                             <div className="a--mainmenu">Invite Friends</div>
-                        </Link>
-                        <Link to="/">
+                        </Link> */}
+                        <Link to="/rules">
                             <div className="a--mainmenu">Rules</div>
                         </Link>
                     </nav>
