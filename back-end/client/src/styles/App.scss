@@ -48,6 +48,12 @@ button{
     display: block;
 }
 
+.next--btn{
+    padding: 0.25rem;
+    width: 100px;
+    margin: auto 0.75rem;
+}
+
 main{
     display: flex;
     flex-direction: column;
@@ -104,6 +110,7 @@ html{
 }
 // HEADER --- DUMB ---------------------------------
 header{
+    z-index: 1;
     position: fixed;
     width: 100%;
     background-color: $Primary;
@@ -145,6 +152,24 @@ header{
         background-color: whitesmoke;
         padding: 0rem 1rem;
         border: solid 1px grey;
+    }
+}
+
+//Header with Links 
+header{
+    .grouping{
+        display: flex;
+        align-items: center;
+        .header__div--links{
+            display: flex;
+            .a--nav{
+                padding: 30px 0px;
+                margin: auto 1rem;
+                &:hover{
+                color: $Tertiary;
+                }
+            }
+        }
     }
 }
 // FOOTER ---  ---------------------------------
@@ -194,12 +219,17 @@ footer{
     justify-content: space-around;
     align-items: baseline;
     width: 100%;
-    height: 80vh;
+    height: 105vh;
     background-color: rgba(0, 0, 0, 0.5);
+    @media (min-width: 500px) {
+        align-items:center;
+        padding: 1rem;
+        height: 110vh;
+    }
     @media (min-width: $tablet) {
         align-items:center;
         padding: 1rem;
-        height: 100vh;
+        height: 110vh;
     }
     span{
         background-color: whitesmoke;
@@ -207,6 +237,10 @@ footer{
         width: 100%;
         height: 120vh;
         padding: 2rem 1.2rem;
+        @media (min-width: 400px) {
+            width: 500px;
+            height: 800px;
+        }
         @media (min-width: $tablet) {
             width: 500px;
             height: 600px;
@@ -221,7 +255,7 @@ form{
     }
     input{
         padding: 0.5rem;
-        margin-top: 1rem;
+        margin-top: 0.75rem;
     }
     label{
         margin: 1rem;
@@ -286,3 +320,66 @@ form{
     }
 }
 
+// CREATE NEW FORM ---------------------------
+.createNewJokeForm{
+    padding: 18vh 1rem;
+    width: 100%;
+    fieldset{
+        margin: 1rem 0rem;
+    }
+    .CreateNewForm{
+        label > * {
+            display: block;
+            width: 300px;
+            margin: 1rem;
+            padding: 0.25rem;
+        }
+    }
+    .span--submit{
+        display: flex;
+        justify-content: space-between;
+        input{
+            padding: 0.25rem;
+            width: 150px;
+            margin: auto 0.75rem;
+            background-color: $Primary;
+            border-style: none;
+
+            &:hover{
+            background-color: $Tertiary;
+            }
+        }
+    }
+}
+    .form--part1{
+        position: relative;
+
+    .form--part2{
+      label > *{
+          width: 80vw;
+      }  
+    }
+}
+
+////TRIVIA FORM 
+.triviaForm{
+fieldset{
+    position: relative;
+    padding: 3rem;
+}
+select{
+    display: block;
+    width: 300px;
+    margin: 2rem;
+    padding: 0.25rem;
+}
+.next--btn{
+    position: absolute;
+    right: 0px;
+    padding: 0.25rem;
+    width: 150px;
+    margin: auto 0.75rem;
+    background-color: $Primary;
+    border-style: none;   
+    }
+}

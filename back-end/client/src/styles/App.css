@@ -12,6 +12,12 @@ button {
   display: block;
 }
 
+.next--btn {
+  padding: 0.25rem;
+  width: 100px;
+  margin: auto 0.75rem;
+}
+
 main {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -83,6 +89,7 @@ html a {
 }
 
 header {
+  z-index: 1;
   position: fixed;
   width: 100%;
   background-color: #fbd157;
@@ -148,6 +155,30 @@ header .usermenu {
   background-color: whitesmoke;
   padding: 0rem 1rem;
   border: solid 1px grey;
+}
+
+header .grouping {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header .grouping .header__div--links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+header .grouping .header__div--links .a--nav {
+  padding: 30px 0px;
+  margin: auto 1rem;
+}
+
+header .grouping .header__div--links .a--nav:hover {
+  color: #E76666;
 }
 
 footer {
@@ -223,8 +254,18 @@ footer .companyName {
       -ms-flex-align: baseline;
           align-items: baseline;
   width: 100%;
-  height: 80vh;
+  height: 105vh;
   background-color: rgba(0, 0, 0, 0.5);
+}
+
+@media (min-width: 500px) {
+  .modalwrapper {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding: 1rem;
+    height: 110vh;
+  }
 }
 
 @media (min-width: 768px) {
@@ -233,7 +274,7 @@ footer .companyName {
         -ms-flex-align: center;
             align-items: center;
     padding: 1rem;
-    height: 100vh;
+    height: 110vh;
   }
 }
 
@@ -243,6 +284,13 @@ footer .companyName {
   width: 100%;
   height: 120vh;
   padding: 2rem 1.2rem;
+}
+
+@media (min-width: 400px) {
+  .modalwrapper span {
+    width: 500px;
+    height: 800px;
+  }
 }
 
 @media (min-width: 768px) {
@@ -259,7 +307,7 @@ form label, form input {
 
 form input {
   padding: 0.5rem;
-  margin-top: 1rem;
+  margin-top: 0.75rem;
 }
 
 form label {
@@ -334,5 +382,72 @@ form .submit--btn {
     width: 50vw;
     height: 60px;
   }
+}
+
+.createNewJokeForm {
+  padding: 18vh 1rem;
+  width: 100%;
+}
+
+.createNewJokeForm fieldset {
+  margin: 1rem 0rem;
+}
+
+.createNewJokeForm .CreateNewForm label > * {
+  display: block;
+  width: 300px;
+  margin: 1rem;
+  padding: 0.25rem;
+}
+
+.createNewJokeForm .span--submit {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.createNewJokeForm .span--submit input {
+  padding: 0.25rem;
+  width: 150px;
+  margin: auto 0.75rem;
+  background-color: #fbd157;
+  border-style: none;
+}
+
+.createNewJokeForm .span--submit input:hover {
+  background-color: #E76666;
+}
+
+.form--part1 {
+  position: relative;
+}
+
+.form--part1 .form--part2 label > * {
+  width: 80vw;
+}
+
+.triviaForm fieldset {
+  position: relative;
+  padding: 3rem;
+}
+
+.triviaForm select {
+  display: block;
+  width: 300px;
+  margin: 2rem;
+  padding: 0.25rem;
+}
+
+.triviaForm .next--btn {
+  position: absolute;
+  right: 0px;
+  padding: 0.25rem;
+  width: 150px;
+  margin: auto 0.75rem;
+  background-color: #fbd157;
+  border-style: none;
 }
 /*# sourceMappingURL=App.css.map */

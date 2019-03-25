@@ -76,7 +76,7 @@ export default class Playlist extends React.Component {
 
         const sampledata = this.state.SampleData;
         return(
-            <>
+            <section>
                 <div>
                     <h1>Test -- will need to map through list randomly pending on stuff </h1>
                     <TriviaCard 
@@ -87,7 +87,7 @@ export default class Playlist extends React.Component {
                 </div>
                 <button className="nextQuestion"
                         onClick={this.nextQuestion}>Next</button>
-            </>
+            </section>
         )
     }
 }

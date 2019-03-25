@@ -11,8 +11,6 @@ import AutoComplete from './TypeOfJokes/AutoComplete';
 import Header from '../layout/HeaderNav';
 import Footer from '../layout/Footer';
 
-
-
 export default class CreateNewForm extends React.Component{
     constructor(){
         super();
@@ -95,6 +93,10 @@ export default class CreateNewForm extends React.Component{
         console.log('Hi look here');
 
         this.createNewJokeForm.current.reset();
+
+          let path = "/home/:user"
+          this.props.history.push(path);
+          
     }  
 
     moar = ()=>{
@@ -123,39 +125,41 @@ export default class CreateNewForm extends React.Component{
                       onSubmit={this.submitJoke}>
                     <h1>Create A New Joke</h1>
                     <fieldset name="type_group ">
-                        <label> Select the group(s) you would like to give authorization to view your joke && type 
                             <span className="form--part1">
-                                <select name="group" type="select">
-                                    {user_groups.map((group=>{return <option value = {group}
-                                                                            key = {user_groups.findIndex( x=> x=== group)}>{group}
-                                                                            </option>}))}
-                                </select>
-                                <select name="typeofJoke" type="select" placeholder="Select Option...">
-                                    {jokeTypes.map((joke=>{return <option value = {joke}
-                                                                        key = {jokeTypes.findIndex( x => x === joke )}>{joke}
-                                                                </option>}))}
-                                </select>
-                                <button className="next"
+                                <label> Select the group you would like to give authorization to view your joke : 
+                                    <select name="group" type="select">
+                                        {user_groups.map((group=>{return <option value = {group}
+                                                                                key = {user_groups.findIndex( x=> x=== group)}>{group}
+                                                                                </option>}))}
+                                    </select>
+                                </label>
+                                <label>&& the type of question you would like to create:
+                                    <select name="typeofJoke" type="select" placeholder="Select Option...">
+                                        {jokeTypes.map((joke=>{return <option value = {joke}
+                                                                            key = {jokeTypes.findIndex( x => x === joke )}>{joke}
+                                                                    </option>}))}
+                                    </select>
+                                </label>
+                                <button className="next--btn"
                                         onClick={this.initiate}>
                                         Next
                                 </button>
                             </span>
-                        </label>
                     </fieldset>
-
-                    <fieldset className={this.state.display}>
-                        <label> to create a new {this.state.newJoke.type} joke, please fill out the fields below:
-                            {formType(this.state.newJoke.type)}
-                        </label>
-                    </fieldset>
-                    <span className="span--submit">
-                        <input type="submit" 
-                            value="Create!"  
-                            className={this.state.display}/>
-                        <button className={this.state.display}
-                                onClick={this.moar}>
-                                Create Another?
-                        </button>
+                    <span className="form--part2">
+                        <fieldset className={this.state.display}>
+                            <label> To create a new {this.state.newJoke.type} joke, please fill out the fields below:</label>
+                                {formType(this.state.newJoke.type)}
+                        </fieldset>
+                        <span className="span--submit">
+                            <button className={this.state.display}
+                                    onClick={this.moar}>
+                                    Create Another?
+                            </button>
+                            <input type="submit" 
+                                value="Create!"  
+                                className={this.state.display}/>
+                        </span>
                     </span>
                 </form>
         </main>
