@@ -383,3 +383,56 @@ select{
     border-style: none;   
     }
 }
+
+/// PLAYLIST 
+// .PlaylistPage{
+//     display: flex;
+//     flex-wrap: nowrap;
+// }
+// .div__scorecard{
+//     background-color: $Tertiary;
+//     margin: 1rem;
+//     padding: 1rem;
+//     border-radius: 4px;
+//     width: 300px;
+//     span{
+//         padding: 1rem;
+//         margin: 1rem;
+//     }
+// }
+
+.scoreboard{
+    text-align: center;
+    background-color: $Secondary;   
+    border-radius: 10px;
+    width: 300px;
+    margin: 1rem;
+    border: solid whitesmoke 10px;
+
+    * {
+    color: whitesmoke; 
+    }
+
+    & > * {
+     margin: 0.5rem;
+     border-radius: 4px;
+    }
+
+    .scoreboard--teams{
+        text-align: left;
+        padding: 1rem;
+        border: solid whitesmoke 4px;
+    }
+}
+
+///RULES AND REGULATIONS -----------------
+
+.GameRulesPage{
+    text-align: left;
+    & > * {
+        width: 90%;
+    }
+    h5{
+        text-align: center;
+    }
+}

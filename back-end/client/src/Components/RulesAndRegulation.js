@@ -28,19 +28,31 @@ export default class RulesAndRegulation extends React.Component{
         return(
         <>
         <Header/>
-        <main className="triviaForm">
-            <span>
+        <main className="GameRulesPage">
+            <div>
                 <h1>Truthy or Falsey?</h1>
-                <p>sdfjsodifjosdfjoisdjfsdfiosjd</p>
-            </span>
-            <span>
+                <p>Your classic game of truth and false. Someone 
+                    writes something that is true or false and you
+                    guess which it is.
+                </p>
+            </div>
+            <div>
                 <h1>Multiple Choice</h1>
-                <p>sdfjsodifjosdfjoisdjfsdfiosjd</p>
-            </span>
-            <span>
+                <p>A question, many options but only one answer.
+                    Don't sweat, it's not for marks. A question followed
+                    by many options - well three, max - choose the right one!
+                </p>
+            </div>
+            <div>
                 <h1>Auto Complete</h1>
-                <p>sdfjsodifjosdfjoisdjfsdfiosjd</p>
-            </span>
+                <p>...you can fill in the blanks on this one.
+                    Just kidding. For this trivia type you will
+                    be faced with an incomplete sentence. You must
+                    choose the word that best fits the sentence. 
+                    WWGS (what would google say?). 
+                </p>
+            </div>
+        <h5>***SPITTING, HITTING OR SWEARING IS ILL ADVISED****</h5>
         </main>
         <Footer/>
         </>

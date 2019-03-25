@@ -450,4 +450,40 @@ form .submit--btn {
   background-color: #fbd157;
   border-style: none;
 }
+
+.scoreboard {
+  text-align: center;
+  background-color: #53435B;
+  border-radius: 10px;
+  width: 300px;
+  margin: 1rem;
+  border: solid whitesmoke 10px;
+}
+
+.scoreboard * {
+  color: whitesmoke;
+}
+
+.scoreboard > * {
+  margin: 0.5rem;
+  border-radius: 4px;
+}
+
+.scoreboard .scoreboard--teams {
+  text-align: left;
+  padding: 1rem;
+  border: solid whitesmoke 4px;
+}
+
+.GameRulesPage {
+  text-align: left;
+}
+
+.GameRulesPage > * {
+  width: 90%;
+}
+
+.GameRulesPage h5 {
+  text-align: center;
+}
 /*# sourceMappingURL=App.css.map */

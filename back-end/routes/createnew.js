@@ -7,7 +7,7 @@ const groups = require('../Data/Groups.js');
 
 router.post('/group', (req, res)=>{
     console.log(req.body);
-     console.log(jokeExpNm);
+    //  console.log(jokeExpNm);
      const newGroup = new groups({
         admin: {
             name: "Rebecca Ngo",
@@ -31,12 +31,11 @@ router.post('/group', (req, res)=>{
 
 router.post('/user', (req, res)=>{
    console.log(req.body);
-    console.log(jokeExpNm);
+    // console.log(jokeExpNm);
     const newUser = new user({
         name: "Rebecca Ngo",
         email: "rebeccango.ngo@gmail.com",
-        password: "Bacon1",
-        created: Date.now
+        password: "Bacon1"
     });
 
     newUser.save().then(doc => {

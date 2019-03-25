@@ -1,6 +1,6 @@
 import React from 'react';
 import defaultUserGroups from '../../Assets/data_defaultUsers';
-import Playlist from '../Playlist';
+import Playmode from '../Playmode';
 
 import Header from '../layout/HeaderNav';
 import Footer from '../layout/Footer';
@@ -66,7 +66,7 @@ export default class TriviaMode extends React.Component{
                 </fieldset>
             </form>
             <span className={this.state.gamedisplay}>
-                <Playlist/>
+                <Playmode/>
             </span>
         </main>
         <Footer/>

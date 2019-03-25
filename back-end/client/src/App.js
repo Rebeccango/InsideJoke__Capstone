@@ -11,6 +11,7 @@ import RulesAndRegulation from './Components/RulesAndRegulation';
 import ReviewRepo from './Components/ReviewRepo';
 
 //Data
+import Scoreboard from './Components/ScoreBoard';
 // import jokeTypes from './Components/Forms/joke_types';
 
 class App extends Component {
@@ -28,6 +29,9 @@ class App extends Component {
             <Route path="/play" render={(routeProps)=>(<TriviaMode {...routeProps}/>)}/> */}
             <Route path="/rules" render={(routeProps)=>(<RulesAndRegulation {...routeProps}/>)}/>
             <Route path="/review" render={(routeProps)=>(<ReviewRepo {...routeProps}/>)}/>
+            
+            <Route exact path="/test" component={Scoreboard}/>
+
           </Switch>
         {/* <Footer/> */}
         </div>

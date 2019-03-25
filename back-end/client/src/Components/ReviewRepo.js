@@ -18,7 +18,22 @@ export default class ReviewRepo extends React.Component{
         <>
         <Header/>
         <main className="triviaForm">
-            <section>
+            <table class="table__showdate">
+                <thead class ='unhide'>
+                    <tr class ='unhide'>
+                        <td class="unhide thlabel">GROUPS</td>
+                        <td class="unhide thlabel">JOKES</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Public, University</td>
+                        <td>1)</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            {/* <section>
                 Groups
             </section>
             <section>
@@ -26,7 +41,7 @@ export default class ReviewRepo extends React.Component{
             </section>
             <section>   
                 Summary
-            </section>
+            </section> */}
         </main>
         <Footer/>
         </>
