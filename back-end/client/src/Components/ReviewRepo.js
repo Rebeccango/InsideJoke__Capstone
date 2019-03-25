@@ -18,11 +18,11 @@ export default class ReviewRepo extends React.Component{
         <>
         <Header/>
         <main className="triviaForm">
-            <table class="table__showdate">
-                <thead class ='unhide'>
-                    <tr class ='unhide'>
-                        <td class="unhide thlabel">GROUPS</td>
-                        <td class="unhide thlabel">JOKES</td>
+            <table className="table__showdate">
+                <thead className ='unhide'>
+                    <tr className ='unhide'>
+                        <td className="unhide thlabel">GROUPS</td>
+                        <td className="unhide thlabel">JOKES</td>
                     </tr>
                 </thead>
                 <tbody>

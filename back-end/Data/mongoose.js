@@ -5,7 +5,7 @@ let joke = new mongoose.Schema({
         type: String,
         auth_group: String,
         question: String,
-        choices: String,
+        choices: Array,
         answer: String,
         tags:String,
         date: {

@@ -407,7 +407,6 @@ select{
     border-radius: 10px;
     width: 300px;
     margin: 1rem;
-    border: solid whitesmoke 10px;
 
     * {
     color: whitesmoke; 
@@ -434,5 +433,55 @@ select{
     }
     h5{
         text-align: center;
+    }
+}
+
+
+//TEST -------------------------------------------
+.triviaChoice--btn{
+    display: block;
+    // padding: 1rem;
+    margin: 1rem;   
+    &:hover{
+    background-color: $Tertiary;
+    color: whitesmoke;
+    }
+}
+
+.fullquestion{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 500px;
+    h1{
+        color: $Primary;
+    }
+ background-color:  $Secondary;
+    .triviaQuestionParagraph{
+        width: 300px;
+        padding: 1rem;
+        // height: 250px;
+        background-color: $Primary;
+        margin: 2rem 0rem;
+    }
+}
+
+//TRUTHY FALSEY 
+
+.fullquestion--mc{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 500px;
+    background-color:  $Secondary;
+
+    h1{
+        color: $Primary;
+    }
+
+    button{
+        width: 300px;
     }
 }

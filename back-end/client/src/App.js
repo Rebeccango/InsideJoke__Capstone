@@ -12,6 +12,8 @@ import ReviewRepo from './Components/ReviewRepo';
 
 //Data
 import Scoreboard from './Components/ScoreBoard';
+import MultipleChoiceCard from './Components/Cards/MultipleChoiceCard';
+import TruthyFalseyCard from './Components/Cards/TruthyFalseyCard';
 // import jokeTypes from './Components/Forms/joke_types';
 
 class App extends Component {

@@ -34,12 +34,12 @@ export default class TriviaMode extends React.Component{
         return(
         <>
         <Header/>
-        <Sound  url={soundfile}
+        {/* <Sound  url={soundfile}
                 playStatus={Sound.status.PLAYING}
                 onLoading={this.handleSongLoading}
                 onPlaying={this.handleSongPlaying}
                 onFinishedPlaying={this.handleSongFinishedPlaying}
-                />
+                /> */}
         <main className="triviaForm">
             <form ref={this.playForm}
                 onSubmit={this.playMode}

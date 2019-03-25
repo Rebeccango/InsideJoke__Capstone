@@ -1,37 +1,42 @@
 import React from 'react';
 import axios from 'axios';
+import jokeTypes from '../Assets/data_joketypes';
 
-import TriviaCard from './TriviaCard';
 import ScoreBoard from './ScoreBoard';
 import SampleData from '../Test/Data/sampleData';
+
+import TruthyFalseyCard from '../Components/Cards/TruthyFalseyCard';
+import MultipleChoiceCard from '../Components/Cards/MultipleChoiceCard';
+import AutoCompleteCard from '../Components/Cards/AutoCompleteCard';
 
 export default class Playmode extends React.Component {
     state = {
         group: "" ,       
-        playlist: [],
+        jokelist: [],
         playing: 0,
-        playingMax: 0,
+        listMax: 0,
         sampledata : SampleData
     }
 
     nextQuestion = ( prevState )=>{
         var playing = this.state.playing; 
 
-        if(playing < this.state.playingMax){
+        if(playing < this.state.listMax){
             this.setState({playing: playing  + 1 })
         }
         else{
             return null;
         }
     }
+
     componentWillMount(){
         axios.get('/jokes')
         .then((res)=>{
             console.log(res.data)
-            var playlist = res.data;
+            var jokelist = res.data;
             this.setState({
-                playlist: playlist,
-                playingMax: playlist.length - 1
+                jokelist: jokelist,
+                listMax: jokelist.length - 1
             })
         })
         .catch((err)=>{
@@ -39,71 +44,39 @@ export default class Playmode extends React.Component {
         })
     }
 
-    componentDidMount(){
-//work around using sample data 
-        // this.setState({
-        //     playlist: SampleData,
-        //     playingMax: SampleData.length - 1
-        // })
-
-        // axios.get('/jokes')
-        // .then((res)=>{
-        //     console.log(res.data)
-        //     var playlist = res.data;
-        //     this.setState({
-        //         playlist: playlist,
-        //         playingMax: playlist.length - 1
-        //     })
-        // })
-        // .catch((err)=>{
-        //     console.log(err)
-        // })
-    }
-
     render(){
-        // const {answer, auth_group, author, choices, question, type} = this.state.playlist
-        const playlist = this.state.playlist;
-
-        if (playlist.length === 0){
-            return null;
+        function cardType(type) {
+            switch(type){  
+                case jokeTypes[0]:
+                    return <TruthyFalseyCard/>;
+                case jokeTypes[1]:
+                    return <MultipleChoiceCard/>;
+                case jokeTypes[2]:
+                    return <AutoCompleteCard/>;
+                default:
+                    return null;
+            }
         }
-
-        console.log(playlist[0]);
-        const one = (playlist[0]);
-        console.log(one);
-        // console.log(one.answer);
+        // const {answer, auth_group, author, choices, question, type} = this.state.playlist
+        const list = this.state.jokelist;
+        var index = this.state.playing;
+        
+                if (list.length === 0){
+                    return null;
+                }
+        //ask IAN about this, why is the object returned 
+        console.log('the question we are accessing is');
+        console.log(list[list.length-1]);
+        console.log(list[list.length-1].choices[0]);
+        console.log(list[list.length-1].choices[3]);
 
         const sampledata = this.state.sampledata;
         return(
             <section className="PlaylistPage">
-                <ScoreBoard/>
-                {/* this will be the question card / replaced by it  */}
-                <div className="div__question">
-                    <h1>{sampledata[this.state.playing].type}:</h1>
-                        <span className="triviaquestion">
-                            {sampledata[this.state.playing].question}
-                        </span>
-                        <span className="trivioptions">
-                        <h3>Select One of the options below:</h3>
-                            {sampledata[this.state.playing].choices}
-                        </span>
-                        <div className="Options">
-                            <button className="nextQuestion"
-                            onClick={this.nextQuestion}>Next</button>
-                            <button className="nextQuestion"
-                            onClick={this.nextQuestion}>Answer</button>
-                        </div>
-                    </div>
-                {/* <div>
-                    <h1>Test -- will need to map through list randomly pending on stuff </h1>
-                    <TriviaCard 
-                                answer={SampleData[this.state.playing].answer}
-                                choices ={SampleData[this.state.playing].choices || ""}
-                                question={SampleData[this.state.playing].question}
-                                />
+                {/* <ScoreBoard/> */}
+                <div className="triviaCard">
+                    {cardType(jokeTypes[1])}
                 </div>
-                <button className="nextQuestion"
-                        onClick={this.nextQuestion}>Next</button> */}
             </section>
         )
     }
