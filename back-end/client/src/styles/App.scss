@@ -54,7 +54,7 @@ main{
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
-    padding-top: 41vh;    
+    padding-top: 41vh   ;    
     padding-bottom: 10rem;
     @media (min-width: $tablet) {
         padding-top: 25vh;
@@ -182,6 +182,9 @@ footer{
 //LANDING PAGE -----------------
 .landingPage{
     height: 60vh;
+    @media (min-width: $tablet){
+        height: 70vh; 
+    }
     .div__btnContainer{ 
         display: flex;
         flex-direction: column;
@@ -459,6 +462,7 @@ select{
     justify-content: center;
     align-items: center;
     width: 500px;
+    margin: auto;
 
     span{
         color: $Primary;
@@ -489,6 +493,8 @@ select{
     justify-content: center;
     align-items: center;
     width: 500px;
+    margin: auto;
+    margin-bottom: 3rem;    
     background-color:  $Secondary;
     & > *, & *{
         color: $Primary; 

@@ -198,6 +198,12 @@ footer .companyName {
   height: 60vh;
 }
 
+@media (min-width: 768px) {
+  .landingPage {
+    height: 70vh;
+  }
+}
+
 .landingPage .div__btnContainer {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -549,6 +555,7 @@ form .submit--btn {
       -ms-flex-align: center;
           align-items: center;
   width: 500px;
+  margin: auto;
   background-color: #53435B;
 }
 
@@ -587,6 +594,8 @@ form .submit--btn {
       -ms-flex-align: center;
           align-items: center;
   width: 500px;
+  margin: auto;
+  margin-bottom: 3rem;
   background-color: #53435B;
 }
 

@@ -4,8 +4,11 @@ import React from 'react';
 export default class TruthyFalseyCard extends React.Component{
 
     submitanswer = (answer) => {
-        this.props.nextQuestion(answer) 
+        console.log('answer from true false card');
+        console.log(answer);
+        this.props.nextQuestion(answer);
     }
+
     render(){
         return(
             <div className="fullquestion--mc">
@@ -15,10 +18,10 @@ export default class TruthyFalseyCard extends React.Component{
                 </div>
                 <div className="triviaChoices">
                     <button className="triviaChoice--btn truthy--btn"
-                            onClick={this.submitanswer(true)}
+                            onClick={()=>{ this.submitanswer("True")}}
                             >TRUTHY</button>
                     <button className="triviaChoice--btn falsey--btn"
-                            onClick={this.submitanswer(false)}
+                            onClick={()=>{this.submitanswer("False")}}
                             >FALSEY</button>
                 </div>
             </div>

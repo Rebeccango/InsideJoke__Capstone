@@ -11,38 +11,37 @@ export default class TriviaMode extends React.Component {
             jokelist: ["hello","two"] ,
             playing: 1,
             listMax: 0,
-            answer: "hide"
+            answer: "hide",
+            nWrong: 0,
+            nRight: 0
         }
     }
 
-    // ASK why aren't any of my methos showing up
-    submitHander = ()=>{
-        console.log('test')
-    }
-    // 
     submitHandler = (list) => {
         this.setState({
-            jokelist : list
+            jokelist : list,
+            listMax: list.length -1
         })
     }
-    nextHandler =(answer)=> {
+
+    questionHandler =(answer)=> {
     //     // this method must do the following 
-     if(answer === this.state.jokelist[this.state.playing].answer){
+        console.log(this)
+    if(answer === this.state.jokelist[this.state.playing].answer){
          this.setState({
-             answer: "correct"
+             nRight: this.state.nRight + 1
          })
+         window.alert("correct you are");
      }
      else{
+         console.log('incorrect answer');
          this.setState({
-             anwer: "incorrect"
+             nWrong: this.state.nWrong + 1
          })
+         window.alert("incorrect");
      }
-    //     // check what answer was submitted
-    //     // check it against the correct answer
-    //     // alert the participants if it is correct /incorrect
-    //     // increase state
-    //     console.log('Im a little teapot, here is my handler');
         console.log('answer');
+
         this.setState({
             playing: this.state.playing + 1
         })
@@ -51,11 +50,12 @@ export default class TriviaMode extends React.Component {
     render(){
         return(
             <>
+            {/* {this.state.playing === this.stat   e.listMax &&  <h1>You're done!</h1> } */}
                 <TriviaForm submitHandler={this.submitHandler}/>
                 <span className={this.state.gamediplay}>
                     <TriviaGame list={this.state.jokelist}
                                 playing={this.state.playing}
-                                nextQuestion={this.nextHandler}/>
+                                nextQuestion={this.questionHandler}/>
                 </span>
             </>
         )
