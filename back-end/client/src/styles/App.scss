@@ -1,5 +1,6 @@
 
 
+
 //VARIABLES 
     // Media query parameters
 $mobile: 320px;
@@ -53,7 +54,7 @@ main{
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
-    padding-top: 25vh;
+    padding-top: 41vh;    
     padding-bottom: 10rem;
     @media (min-width: $tablet) {
         padding-top: 25vh;
@@ -458,6 +459,10 @@ select{
     justify-content: center;
     align-items: center;
     width: 500px;
+
+    span{
+        color: $Primary;
+    }
     h1{
         color: $Primary;
     }

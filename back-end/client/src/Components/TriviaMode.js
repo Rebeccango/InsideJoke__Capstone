@@ -27,6 +27,16 @@ export default class TriviaMode extends React.Component {
     }
     nextHandler =(answer)=> {
     //     // this method must do the following 
+     if(answer === this.state.jokelist[this.state.playing].answer){
+         this.setState({
+             answer: "correct"
+         })
+     }
+     else{
+         this.setState({
+             anwer: "incorrect"
+         })
+     }
     //     // check what answer was submitted
     //     // check it against the correct answer
     //     // alert the participants if it is correct /incorrect

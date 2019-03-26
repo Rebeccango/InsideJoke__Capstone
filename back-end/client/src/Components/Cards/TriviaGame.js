@@ -33,7 +33,7 @@ cardType = (oftype, joke) =>{
                                         nextQuestion={this.props.nextQuestion}
                                         />;
         case jokeTypes[2]:
-            return <AutoCompleteCard joketypes={joke.type}
+            return <AutoCompleteCard joketype={joke.type}
                                      question={joke.question}
                                      nextQuestion={this.props.nextQuestion}
                                      />;
@@ -48,7 +48,6 @@ const list = this.props.list;
 console.log(list);
 var index = this.props.playing;
 console.log(index);
-
 
         return(
             <section className="PlaylistPage">
