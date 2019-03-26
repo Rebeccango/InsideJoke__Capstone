@@ -4,7 +4,7 @@ import React from 'react';
 export default class TruthyFalseyCard extends React.Component{
 
     submitanswer = (answer) => {
-        this.props.submitHandler(answer)
+        // this.props.submitHandler(answer)
     }
     render(){
         return(
@@ -17,10 +17,10 @@ export default class TruthyFalseyCard extends React.Component{
                 </div>
                 <div className="triviaChoices">
                     <button className="triviaChoice--btn truthy--btn"
-                            // onClick={this.props.submitanswer(true)}
+                            onClick={this.submitanswer(true)}
                             >TRUTHY</button>
                     <button className="triviaChoice--btn falsey--btn"
-                            // onClick={this.props.submitanswer(false)}
+                            onClick={this.submitanswer(false)}
                             >FALSEY</button>
                 </div>
             </div>

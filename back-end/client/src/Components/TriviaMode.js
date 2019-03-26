@@ -11,7 +11,7 @@ export default class TriviaMode extends React.Component {
         this.state = {
             user: "Guest",
             jokelist: [],
-            playing: 1,
+            playing: 0,
             listMax: 0,
             answer: "hide"
         }
@@ -27,7 +27,8 @@ export default class TriviaMode extends React.Component {
         return(
             <>
                 <TriviaForm submitHandler={this.submitHandler}/>
-                {/* <TriviaGame list={this.state.jokelist}/> */}
+                <TriviaGame list={this.state.jokelist}
+                            playing={this.state.playing}/>
             </>
         )
     }
