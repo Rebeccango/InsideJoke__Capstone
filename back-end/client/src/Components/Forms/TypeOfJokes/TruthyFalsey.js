@@ -11,8 +11,9 @@ export default class TruthyFalsey extends React.Component{
 
                 <label> True or False?
                     <select name="answer" placeholder="Well is it true though?" required>
-                        <option value = "True">Truthy</option> 
-                        <option value = "False">Falsey</option> 
+                        <option value ="True"
+                                onClick={this.props.nextQuestion}>Truthy</option> 
+                        <option value ="False">Falsey</option> 
                     </select>
                 </label>
             </span>

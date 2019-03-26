@@ -9,9 +9,6 @@ import MultipleChoice from './TypeOfJokes/MultipleChoice';
 import TruthyFalsey from './TypeOfJokes/TruthyFalsey';
 import AutoComplete from './TypeOfJokes/AutoComplete';
 
-import Header from '../layout/HeaderNav';
-import Footer from '../layout/Footer';
-
 export default class CreateNewForm extends React.Component{
     constructor(){
         super();
@@ -52,7 +49,7 @@ export default class CreateNewForm extends React.Component{
     
     submitJoke = (e) => {
         e.preventDefault();
-        if(this.state.newJoke.type == jokeTypes[1] ){
+        if(this.state.newJoke.type === jokeTypes[1] ){
             var newJoke = {
                 author: this.state.user_id,
                 type: e.target.typeofJoke.value,
@@ -109,10 +106,8 @@ export default class CreateNewForm extends React.Component{
                     return null;
             }
         }
-        const {user_groups, ...rest} = this.state
+        const {user_groups} = this.state
         return(
-        <>
-        <Header user={this.props.user}/>
         <main className="createNewJokeForm">
                 <form className= "CreateNewForm"
                       ref={this.createNewJokeForm}
@@ -160,8 +155,6 @@ export default class CreateNewForm extends React.Component{
                     </span>
                 </form>
         </main>
-        <Footer/>
-        </>
         )
     }
 }

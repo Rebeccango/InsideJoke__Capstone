@@ -1,8 +1,8 @@
 import React from 'react';
 // import { Link } from 'react-router-dom';
 
-import soundfile from '../../Assets/Sounds/game_sound.mp3';
-import Sound from 'react-sound';
+// import soundfile from '../../Assets/Sounds/game_sound.mp3';
+// import Sound from 'react-sound';
 
 export default class Login extends React.Component{
     constructor(){

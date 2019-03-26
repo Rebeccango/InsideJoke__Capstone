@@ -1,7 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-//Assets
-import camel from '../../Assets/Logo/camel.jpg';
 
 export default class Footer extends React.Component{
     render(){
@@ -20,7 +18,6 @@ export default class Footer extends React.Component{
                     </h4>
                 </section>
                 <div className="companyName">
-                    {/* <img src={camel} alt="CamelCaseGames"/> */}
                     <h5>CamelCaseGames</h5>
                 </div>
             </footer>

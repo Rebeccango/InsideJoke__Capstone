@@ -4,22 +4,26 @@ import React from 'react';
 
 export default class AutoCompleteCard extends React.Component{
     render(){
-
-        var Choices = ["to get to the other side", "to get some free medium fries", "cause that white boi was on the other side"];
+        var choiceslist = this.props.choices;
+        var choicesArr = choiceslist[0].split(',').map(choice => choice.trim().toLowerCase());
+        console.log(choiceslist);
         return(
             <div className="fullquestion">
                 <div className="triviaQuestion">
-                    {/* <h1>{this.props.joketype}</h1> */}
-                    <h1>Auto Complete:</h1>
-                    {/* <span>{this.props.question}</span> */}
-                    <div className="triviaQuestionParagraph">"Why did the chicken cross the road?</div>
+                    <h1>{this.props.joketype}</h1>
+                    <span>{this.props.question}</span>
                 </div>
+            <form>
                 <div className="triviaChoices">
-                <form>
-                    {/* create ref */}
-                    <input type="submit" name="autocompleteTriviaAnswer"/>
-                </form>
+            
+                { choicesArr.map( (choice=>{return <button className= {`triviachoice--${choicesArr.findIndex( x => x === choice)}`}
+                                                            key= {choicesArr.findIndex( x => x === choice)}
+                                                            onClick={this.props.nextQuestion}>{choice}</button>}))}
+                {/* <button className="triviaChoice--btn truthy--btn"
+                        name="autoCompleteAnswer"
+                        onClick={this.props.nextQuestion}>TRUTHY</button> */}
                 </div>
+            </form>
             </div>
         )
     }

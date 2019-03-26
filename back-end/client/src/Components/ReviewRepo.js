@@ -1,9 +1,5 @@
 import React from 'react';
 
-import Header from '../Components/layout/HeaderNav';
-import Footer from '../Components/layout/Footer';
-
-
 export default class ReviewRepo extends React.Component{ 
     constructor(){
         super();

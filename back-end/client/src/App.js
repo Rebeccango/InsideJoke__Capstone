@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import './styles/App.css';
 //Components
-
 import TriviaMode from './Components/TriviaMode';
 import ReviewRepo from './Components/ReviewRepo';
 
@@ -15,12 +14,6 @@ import Login from './Components/Forms/LoginPage';
 import MainMenu from './Components/MainMenu';
 import RulesAndRegulation from './Components/RulesAndRegulation';
 import CreateNewForm from './Components/Forms/CreateNewForm';
-
-//Data
-import Scoreboard from './Components/ScoreBoard';
-import MultipleChoiceCard from './Components/Cards/MultipleChoiceCard';
-import TruthyFalseyCard from './Components/Cards/TruthyFalseyCard';
-// import jokeTypes from './Components/Forms/joke_types';
 
 class App extends Component {
   constructor(props){
@@ -61,7 +54,6 @@ class App extends Component {
                                   user={this.state.user}/>)}/>
             <Route path="/review" render={(routeProps)=>(<ReviewRepo {...routeProps}
                                   user={this.state.user}/>)}/>    
-            <Route exact path="/test" component={Scoreboard}/>
           </Switch>
         <Footer/>
         </div>

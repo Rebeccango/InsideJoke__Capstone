@@ -1,7 +1,4 @@
 import React from 'react';
-import Header from '../Components/layout/HeaderNav';
-import Footer from '../Components/layout/Footer';
-
 
 export default class RulesAndRegulation extends React.Component{ 
     constructor(){
@@ -14,20 +11,17 @@ export default class RulesAndRegulation extends React.Component{
 
     playMode = (e) => {
         e.preventDefault();
-        
         this.setState({
             formdisplay: "hide",
             gamedisplay: "show"
         })
-
+        
         console.log(e.target.playgroup.value);
         console.log('finish writing this function...')
     }
 
     render(){
         return(
-        <>
-        <Header user={this.props.user}/>
         <main className="GameRulesPage">
             <div>
                 <h1>Truthy or Falsey?</h1>
@@ -54,8 +48,6 @@ export default class RulesAndRegulation extends React.Component{
             </div>
         <h5>***SPITTING, HITTING OR SWEARING IS ILL ADVISED****</h5>
         </main>
-        <Footer/>
-        </>
         )
     }
 }

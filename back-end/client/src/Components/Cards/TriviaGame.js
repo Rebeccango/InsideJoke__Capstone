@@ -1,6 +1,6 @@
 import React from 'react';
 import jokeTypes from '../../Assets/data_joketypes';
-import sampleData from '../../Test/Data/sampleData';
+// import sampleData from '../../Test/Data/sampleData';
 
 import TruthyFalseyCard from './TruthyFalseyCard';
 import MultipleChoiceCard from './MultipleChoiceCard';
@@ -18,40 +18,41 @@ selectanswer = (answer) => {
     return answer
 }
 
-render(){
-    const list = this.props.list;
-    var index = this.props.playing;
-    console.log(list);
+cardType = (oftype, joke) =>{
 
-    // const {type, choices, question, answer, _id, author } = joke;
-
-    function cardType(type) {
-
-        switch(type){  
-            case jokeTypes[0]:
-                return <TruthyFalseyCard joketype={list[index].type}
-                                         question={list[index].question}
-                                        //  submitHandler={this.selectanswer}
-                                            />;
-            case jokeTypes[1]:
-                return <MultipleChoiceCard joketype={list[index].type}
-                                            question={list[index].question}
-                                            choices={list[index].choices}/>;
-            case jokeTypes[2]:
-                return <AutoCompleteCard joketypes={list[index].type}
-                                            question={list[index].question}/>;
-            default:
-                return null;
-        }
-    }
-        
-        if (list.length === 0){
+    switch(oftype){  
+        case jokeTypes[0]:
+            return <TruthyFalseyCard joketype={joke.type}
+                                     question={joke.question}
+                                     nextQuestion={this.props.nextQuestion}
+                                        />;
+        case jokeTypes[1]:
+            return <MultipleChoiceCard joketype={joke.type}
+                                        question={joke.question}
+                                        choices={joke.choices}
+                                        nextQuestion={this.props.nextQuestion}
+                                        />;
+        case jokeTypes[2]:
+            return <AutoCompleteCard joketypes={joke.type}
+                                     question={joke.question}
+                                     nextQuestion={this.props.nextQuestion}
+                                     />;
+        default:
             return null;
-        }
+    }
+
+}
+
+render(){
+const list = this.props.list;
+console.log(list);
+var index = this.props.playing;
+console.log(index);
+
 
         return(
             <section className="PlaylistPage">
-                {cardType(list[index].type)}
+                { this.cardType(list[index].type, list[index])}
             </section>
         )
     }

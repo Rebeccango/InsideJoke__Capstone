@@ -1,16 +1,12 @@
 import React from 'react';
 import defaultUserGroups from '../../Assets/data_defaultUsers';
-import TriviaGame from '../Cards/TriviaGame';
+// import TriviaGame from '../Cards/TriviaGame';
 import axios from 'axios';
-import ScoreBoard from '../ScoreBoard';
-import jokeTypes from '../../Assets/data_joketypes';
+// import ScoreBoard from '../ScoreBoard';
+// import jokeTypes from '../../Assets/data_joketypes';
 
-
-import Header from '../layout/HeaderNav';
-import Footer from '../layout/Footer';
-
-import soundfile from '../../Assets/Sounds/the_dating_game_1965.mp3';
-import Sound from 'react-sound';
+// import soundfile from '../../Assets/Sounds/the_dating_game_1965.mp3';
+// import Sound from 'react-sound';
 
 export default class TriviaForm extends React.Component{ 
     constructor(){
@@ -36,7 +32,7 @@ export default class TriviaForm extends React.Component{
         console.log('start game');
         this.setState({
             formdisplay: "hide",
-            gamedisplay: "show",
+            gamedisplay: "show"
         })
     }
 
@@ -65,14 +61,6 @@ export default class TriviaForm extends React.Component{
                             className="next--btn"/>
                 </fieldset>
             </form>
-            {/* <span className={this.state.gamedisplay}>
-                <div className="scoreboard">
-                    <ScoreBoard/>
-                </div>
-                <div className="triviaCard">
-                    <TriviaGame list={this.state.jokelist}/>
-                </div>
-            </span> */}
         </main>
         )
     }
