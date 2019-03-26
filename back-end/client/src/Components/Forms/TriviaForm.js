@@ -1,6 +1,6 @@
 import React from 'react';
 import defaultUserGroups from '../../Assets/data_defaultUsers';
-import TriviaGame from '../TriviaGame';
+import TriviaGame from '../Cards/TriviaGame';
 import axios from 'axios';
 import ScoreBoard from '../ScoreBoard';
 import jokeTypes from '../../Assets/data_joketypes';
@@ -28,11 +28,7 @@ export default class TriviaForm extends React.Component{
         .then((res)=>{
             var jokelist = res.data;
             console.log(jokelist)
-            this.setState({
-                jokelist: jokelist,
-                listMax: jokelist.length - 1,
-                playing: 0
-            })
+            this.props.submitHandler(jokelist);
         })
         .catch((err)=>{
             console.log(err)
@@ -44,21 +40,8 @@ export default class TriviaForm extends React.Component{
         })
     }
 
-    nextQuestion = ( prevState )=>{
-        var playing = this.state.playing; 
-
-        if(playing < this.state.listMax){
-            this.setState({playing: playing  + 1 })
-        }
-        else{
-            return null;
-        }
-    }
-
     render(){
         return(
-        <>
-        <Header user={this.props.user}/>
         <main className="triviaForm">
             <form ref={this.triviaForm}
                 onSubmit={this.playMode}
@@ -82,17 +65,15 @@ export default class TriviaForm extends React.Component{
                             className="next--btn"/>
                 </fieldset>
             </form>
-            <span className={this.state.gamedisplay}>
+            {/* <span className={this.state.gamedisplay}>
                 <div className="scoreboard">
                     <ScoreBoard/>
                 </div>
                 <div className="triviaCard">
                     <TriviaGame list={this.state.jokelist}/>
                 </div>
-            </span>
+            </span> */}
         </main>
-        <Footer/>
-        </>
         )
     }
 }

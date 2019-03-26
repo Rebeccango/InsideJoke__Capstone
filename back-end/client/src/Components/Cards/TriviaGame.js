@@ -1,10 +1,10 @@
 import React from 'react';
-import jokeTypes from '../Assets/data_joketypes';
-import sampleData from '../Test/Data/sampleData';
+import jokeTypes from '../../Assets/data_joketypes';
+import sampleData from '../../Test/Data/sampleData';
 
-import TruthyFalseyCard from './Cards/TruthyFalseyCard';
-import MultipleChoiceCard from './Cards/MultipleChoiceCard';
-import AutoCompleteCard from './Cards/AutoCompleteCard';
+import TruthyFalseyCard from './TruthyFalseyCard';
+import MultipleChoiceCard from './MultipleChoiceCard';
+import AutoCompleteCard from './AutoCompleteCard';
 
 export default class TriviaGame extends React.Component {
     constructor(props){

@@ -1,14 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 //components
-import HeaderDumb from './layout/HeaderPlain';
-import Footer from '../Components/layout/Footer';
 
 export default class MainMenu extends React.Component{
     render(){
         return(
             <div className="MainMenu__page">
-                <HeaderDumb user={this.props.user}/>
                 <main>
                     <nav className="nav__mainmenu main">
                         <Link to="/create">
@@ -25,7 +22,6 @@ export default class MainMenu extends React.Component{
                         </Link>
                     </nav>
                 </main>
-                <Footer/>
             </div>
         )
     }
