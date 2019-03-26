@@ -1,24 +1,40 @@
 import React from 'react';
+import axios from 'axios';
 // import { Link } from 'react-router-dom';
 
 export default class Signup extends React.Component{
     constructor(){
         super();
-
         this.loginForm = React.createRef();
+    }
+
+    goHome = ()=>{
+        let path = "/";
+        this.props.history.push(path);
     }
 
     collectData = (e)=>{
         e.preventDefault();
-        let loginInfo = {
+        let newUser = {
             username: e.target.username.value,
-            password: e.target.password.value,
+            email: e.target.email.value,
+            password: e.target.password.value
         }
-        console.log(loginInfo);
-    }
+        console.log(newUser);
 
-    redirect = () => {
-        const path = "/home/:user";
+        axios({
+            method: 'post',
+            url: '/createnew/user',
+            data: newUser
+        })
+        .then((res)=>{
+            console.log('check the database')
+        })
+        .catch((err)=>{
+            console.log(err)
+        })
+
+        let path = "/signin";
         this.props.history.push(path);
     }
 
@@ -29,7 +45,7 @@ export default class Signup extends React.Component{
                     <h1>Sign up</h1>
                 <form className="form--signup"
                         ref={this.loginForm}
-                        onSubmit={this.props.redirect}>
+                        onSubmit={this.collectData}>
                     <label>Username
                         <input type="text" name="username" placeholder="username" required/>
                     </label>
@@ -46,7 +62,7 @@ export default class Signup extends React.Component{
                             onSubmit={this.collectData}
                             className="submit--btn btn"/>
                     <button className="btn close--btn"
-                        onClick={this.props.goHome}>Close</button>
+                        onClick={this.goHome}>Close</button>
                 </form>
             </div>
         </div>

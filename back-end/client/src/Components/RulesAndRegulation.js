@@ -27,7 +27,7 @@ export default class RulesAndRegulation extends React.Component{
     render(){
         return(
         <>
-        <Header/>
+        <Header user={this.props.user}/>
         <main className="GameRulesPage">
             <div>
                 <h1>Truthy or Falsey?</h1>

@@ -31,11 +31,10 @@ router.post('/group', (req, res)=>{
 
 router.post('/user', (req, res)=>{
    console.log(req.body);
-    // console.log(jokeExpNm);
     const newUser = new user({
-        name: "Rebecca Ngo",
-        email: "rebeccango.ngo@gmail.com",
-        password: "Bacon1"
+        name: req.body.username,
+        email: req.body.email,
+        password: req.body.password
     });
 
     newUser.save().then(doc => {

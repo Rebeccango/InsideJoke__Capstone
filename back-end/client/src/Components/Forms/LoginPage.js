@@ -11,30 +11,34 @@ export default class Login extends React.Component{
         this.loginForm = React.createRef();
     }
 
+    goHome = ()=>{
+        let path = "/";
+        this.props.history.push(path);
+    }
+
     collectData = (e)=>{
+        console.log('form starts here');
         e.preventDefault();
         let loginInfo = {
             username: e.target.username.value,
             password: e.target.password.value,
         }
+        this.props.submitHandler(loginInfo);
         console.log(loginInfo);
+
+        let path = `/home/${e.target.username.value}`;
+        this.props.history.push(path);
     }
+
     render(){
         return(
-        <div className="loginPage">
-        <Sound  url={soundfile}
-                playStatus={Sound.status.PLAYING}
-                onLoading={this.handleSongLoading}
-                onPlaying={this.handleSongPlaying}
-                onFinishedPlaying={this.handleSongFinishedPlaying}
-                />
-                
+        <div className="loginPage">                
                 <h1 className="header--modal" >Login</h1>
                 <button className="btn close--btn"
-                        onClick={this.props.goHome}>x</button>
+                        onClick={this.goHome}>x</button>
                 <form className="form--login"
                         ref={this.loginForm}
-                        onSubmit={this.props.redirect}>
+                        onSubmit={this.collectData}>
                     <label>Username
                         <input type="text" name="username" placeholder="username" required/>
                     </label>
@@ -42,7 +46,7 @@ export default class Login extends React.Component{
                         <input type="password" name="password" placeholder="password" required/>
                     </label>
                     <input type="submit" 
-                            onSubmit={this.collectData}
+                            onSubmit={this.props.submitHandler}
                             className="submit--btn btn"/>
                 </form>
         </div>

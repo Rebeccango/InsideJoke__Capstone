@@ -6,7 +6,6 @@ import Axios from 'axios';
 
 export default class Header extends React.Component{
     state = {
-        username: "Rebecks",
         togglemenu: "hide"
     }
 
@@ -50,7 +49,7 @@ export default class Header extends React.Component{
                     </span>
                     <div className="nav--container">
                         <div className="userAvatar">
-                            <h5>{this.state.username}</h5>
+                            <h5>{this.props.user}</h5>
                             <div className="img--userAvatar"></div>
                         </div>
                         <button className="btn--options"

@@ -4,13 +4,15 @@ const mongoose = require('mongoose');
 const joke_db = require('../Data/mongoose.js');
 
 
-router.get('/', (req, res)=>{
+router.get('/:group', (req, res)=>{
+
+    console.log(req.params.group);
     joke_db
     .find({
-        auth_group: "Public"
+        auth_group: req.params.group
     })
     .then(doc=> {
-        console.log(doc);
+        // console.log(doc);
         res.json(doc)
     })
     .catch(err=> {

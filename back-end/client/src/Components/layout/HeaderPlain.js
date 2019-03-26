@@ -1,10 +1,10 @@
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 import kebob from '../../Assets/Icons/Icon-kebab-default.svg'
 
 export default class HeaderDumb extends React.Component{
     state = {
-        username: "Rebecks",
         togglemenu: "hide"
     }
 
@@ -32,7 +32,7 @@ export default class HeaderDumb extends React.Component{
                     </Link>
                     <div className="nav--container">
                         <div className="userAvatar">
-                            <h5>{this.state.username}</h5>
+                            <h5>{this.props.user}</h5>
                             <div className="img--userAvatar"></div>
                         </div>
                         <button className="btn--options"

@@ -11,12 +11,6 @@ $Secondary:#53435B;
 $Tertiary: #E76666;
 $label: white;
 $background: rgb(209, 224, 229);
-    //Second option
-$Primarya: rgb(251, 209, 87);
-$Secondarya:#53435B;
-$Tertiarya: #E76666;
-$label: white;
-
 
     //font
 $font-family: 'Poppins', sans-serif;
@@ -231,11 +225,12 @@ footer{
         padding: 1rem;
         height: 110vh;
     }
-    span{
+}
+    .loginPage, .SignupPage{
         background-color: whitesmoke;
         border-radius: 4px;
         width: 100%;
-        height: 120vh;
+        height: 100vh;
         padding: 2rem 1.2rem;
         @media (min-width: 400px) {
             width: 500px;
@@ -246,7 +241,6 @@ footer{
             height: 600px;
         }
     } 
-}
 
 form{
     label, input{
@@ -294,8 +288,8 @@ form{
     position: relative;
     .close--btn{
         position: absolute;
-        top: -2.75rem;
-        right: -0.75rem;
+        top: 0rem;
+        right: 0rem;
     }
 }
 //SIGNUP FORM
@@ -360,7 +354,10 @@ form{
       }  
     }
 }
-
+.newGroup{
+ background-color: $Primary;
+ text-align:center;
+}
 ////TRIVIA FORM 
 .triviaForm{
 fieldset{
@@ -384,29 +381,31 @@ select{
     }
 }
 
-/// PLAYLIST 
-// .PlaylistPage{
-//     display: flex;
-//     flex-wrap: nowrap;
-// }
-// .div__scorecard{
-//     background-color: $Tertiary;
-//     margin: 1rem;
-//     padding: 1rem;
-//     border-radius: 4px;
-//     width: 300px;
-//     span{
-//         padding: 1rem;
-//         margin: 1rem;
-//     }
-// }
-
 .scoreboard{
+    position: absolute;
+    bottom: -65px;
+    left: 0px;
     text-align: center;
-    background-color: $Secondary;   
-    border-radius: 10px;
-    width: 300px;
-    margin: 1rem;
+    background-color: $Tertiary;   
+    width: 200px;
+
+    @media (min-width: 300px) {
+        bottom: -120px;
+    }
+    @media (min-width: $tablet) {
+        bottom: -75px;
+    }
+    @media (min-width: $desktop) {
+        top: 115px;
+        bottom: 100px;
+    }
+
+    &:hover{
+        bottom: 32px;
+        @media (min-width: $tablet) {
+            bottom: 115px;
+        }    
+    }
 
     * {
     color: whitesmoke; 
@@ -417,11 +416,6 @@ select{
      border-radius: 4px;
     }
 
-    .scoreboard--teams{
-        text-align: left;
-        padding: 1rem;
-        border: solid whitesmoke 4px;
-    }
 }
 
 ///RULES AND REGULATIONS -----------------

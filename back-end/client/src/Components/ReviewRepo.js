@@ -16,7 +16,7 @@ export default class ReviewRepo extends React.Component{
     render(){
         return(
         <>
-        <Header/>
+        <Header user={this.props.user}/>
         <main className="triviaForm">
             <table className="table__showdate">
                 <thead className ='unhide'>

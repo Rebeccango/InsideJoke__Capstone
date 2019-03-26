@@ -19,6 +19,7 @@ export default class MultipleChoiceCard extends React.Component{
                     
                     {  Choices.map((choice=>{return <button className="triviaChoice--btn"
                                                             value={choice}
+                                                            key={choice}
                                                             onClick={this.props.handleMCAnswer}>{choice}</button>}))}
                 </div>
             </div>

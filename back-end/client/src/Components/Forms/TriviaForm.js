@@ -1,6 +1,10 @@
 import React from 'react';
 import defaultUserGroups from '../../Assets/data_defaultUsers';
-import Playmode from '../Playmode';
+import TriviaGame from '../TriviaGame';
+import axios from 'axios';
+import ScoreBoard from '../ScoreBoard';
+import jokeTypes from '../../Assets/data_joketypes';
+
 
 import Header from '../layout/HeaderNav';
 import Footer from '../layout/Footer';
@@ -8,40 +12,77 @@ import Footer from '../layout/Footer';
 import soundfile from '../../Assets/Sounds/the_dating_game_1965.mp3';
 import Sound from 'react-sound';
 
+import TruthyFalseyCard from '../Cards/TruthyFalseyCard';
+import MultipleChoiceCard from '../Cards/MultipleChoiceCard';
+import AutoCompleteCard from '../Cards/AutoCompleteCard';
 
-export default class TriviaMode extends React.Component{ 
+
+
+export default class TriviaForm extends React.Component{ 
     constructor(){
         super();
         this.state = {
             formdisplay: "show",
             gamedisplay: "hide"
         }
+        this.triviaForm = React.createRef();
     }
 
     playMode = (e) => {
         e.preventDefault();
-        
+
+        axios.get(`/jokes/${e.target.playgroup.value}`)
+        .then((res)=>{
+            var jokelist = res.data;
+            this.setState({
+                playingGroup: e.target.playgroup.value,    
+                jokelist: jokelist,
+                listMax: jokelist.length - 1,
+                playing: 0
+            })
+        })
+        .catch((err)=>{
+            console.log(err)
+        })
+    }
+
+    startgame = () => {
+        console.log('start');
         this.setState({
             formdisplay: "hide",
-            gamedisplay: "show"
+            gamedisplay: "show",
         })
+    }
 
-        console.log(e.target.playgroup.value);
-        console.log('finish writing this function...')
+    nextQuestion = ( prevState )=>{
+        var playing = this.state.playing; 
+
+        if(playing < this.state.listMax){
+            this.setState({playing: playing  + 1 })
+        }
+        else{
+            return null;
+        }
     }
 
     render(){
+        function cardType(type) {
+            switch(type){  
+                case jokeTypes[0]:
+                    return <TruthyFalseyCard/>;
+                case jokeTypes[1]:
+                    return <MultipleChoiceCard/>;
+                case jokeTypes[2]:
+                    return <AutoCompleteCard />;
+                default:
+                    return null;
+            }
+        }
         return(
         <>
-        <Header/>
-        {/* <Sound  url={soundfile}
-                playStatus={Sound.status.PLAYING}
-                onLoading={this.handleSongLoading}
-                onPlaying={this.handleSongPlaying}
-                onFinishedPlaying={this.handleSongFinishedPlaying}
-                /> */}
+        <Header user={this.props.user}/>
         <main className="triviaForm">
-            <form ref={this.playForm}
+            <form ref={this.triviaForm}
                 onSubmit={this.playMode}
                 className={this.state.formdisplay}>
             <h1>Play Time!</h1>
@@ -55,18 +96,22 @@ export default class TriviaMode extends React.Component{
                     </label>
                     <label> Select the number of teams/players participating: 
                             <select name="teams" type="select">
-                                <option value="one">One</option>
-                                <option value="two">Two</option>
-                                <option value="three">Three</option>
+                                <option value="1">One</option>
+                                <option value="2">Two</option>
                             </select>
                     </label>
                     <input type="submit" 
                             className="next--btn"
-                            onClick={this.initiate}/>
+                            onClick={this.startgame}/>
                 </fieldset>
             </form>
             <span className={this.state.gamedisplay}>
-                <Playmode/>
+                <div className="scoreboard">
+                    <ScoreBoard/>
+                </div>
+                <div className="triviaCard">
+                    {cardType(jokeTypes[0])}
+                </div>
             </span>
         </main>
         <Footer/>

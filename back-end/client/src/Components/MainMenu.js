@@ -8,7 +8,7 @@ export default class MainMenu extends React.Component{
     render(){
         return(
             <div className="MainMenu__page">
-                <HeaderDumb/>
+                <HeaderDumb user={this.props.user}/>
                 <main>
                     <nav className="nav__mainmenu main">
                         <Link to="/create">
@@ -20,9 +20,6 @@ export default class MainMenu extends React.Component{
                         <Link to="/">
                             <div className="a--mainmenu">Edit & Review</div>
                         </Link>
-                        {/* <Link to="/">
-                            <div className="a--mainmenu">Invite Friends</div>
-                        </Link> */}
                         <Link to="/rules">
                             <div className="a--mainmenu">Rules</div>
                         </Link>

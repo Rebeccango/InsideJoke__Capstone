@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 //Data 
 import jokeTypes from '../../Assets/data_joketypes';
 import defaultUserGroups from '../../Assets/data_defaultUsers';
@@ -51,7 +52,6 @@ export default class CreateNewForm extends React.Component{
     
     submitJoke = (e) => {
         e.preventDefault();
-    //    const { group, typeofJoke, question, answer, choices} = this.createNewJokeForm.current;
         if(this.state.newJoke.type == jokeTypes[1] ){
             var newJoke = {
                 author: this.state.user_id,
@@ -71,16 +71,12 @@ export default class CreateNewForm extends React.Component{
                 answer: e.target.answer.value,
             }
         }
-        this.setState(
-            {
-                newJoke:newJoke,
-            }
-        )
+        this.setState({newJoke:newJoke})
         
         axios({
             method: 'post',
             url: '/createnew',
-            data: newJoke,
+            data: newJoke
           })
           .then((res)=>{
               console.log(res)
@@ -94,13 +90,9 @@ export default class CreateNewForm extends React.Component{
 
         this.createNewJokeForm.current.reset();
 
-          let path = "/home/:user"
+          let path = "/home/:user";
           this.props.history.push(path);
-          
     }  
-
-
-    //Ask Ian about this ------------------
     moar = ()=>{
         window.location.reload();
     }
@@ -120,7 +112,7 @@ export default class CreateNewForm extends React.Component{
         const {user_groups, ...rest} = this.state
         return(
         <>
-        <Header/>
+        <Header user={this.props.user}/>
         <main className="createNewJokeForm">
                 <form className= "CreateNewForm"
                       ref={this.createNewJokeForm}
@@ -128,12 +120,15 @@ export default class CreateNewForm extends React.Component{
                     <h1>Create A New Joke</h1>
                     <fieldset name="type_group ">
                             <span className="form--part1">
-                                <label> Select the group you would like to give authorization to view your joke : 
+                                <label> Select the group your joke belongs to from the list below || create a new group : 
                                     <select name="group" type="select">
                                         {user_groups.map((group=>{return <option value = {group}
                                                                                 key = {user_groups.findIndex( x=> x=== group)}>{group}
                                                                                 </option>}))}
                                     </select>
+                                    <Link to="/createNew/Group">
+                                        <button className="newGroup">Create New Group</button>
+                                    </Link>
                                 </label>
                                 <label>&& the type of question you would like to create:
                                     <select name="typeofJoke" type="select" placeholder="Select Option...">
