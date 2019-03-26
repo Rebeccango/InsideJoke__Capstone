@@ -3,20 +3,17 @@ import React from 'react';
 
 
 export default class MultipleChoiceCard extends React.Component{
-    render(){
 
+    render(){
+        // oke.choices = joke.choices[0].split(‘,’).map(choice => choice.trim().toLowerCase())
         var Choices = ["to get to the other side", "to get some free medium fries", "cause that white boi was on the other side"];
         return(
-            <div className="fullquestion">
+            <div className="fullquestion--mc">
                 <div className="triviaQuestion">
-                    {/* <h1>{this.props.joketype}</h1> */}
-                    <h1>Multiple Choice:</h1>
-                    {/* <span>{this.props.question}</span> */}
-                    <div className="triviaQuestionParagraph">"Why did the chicken cross the road?</div>
+                <h1>{this.props.joketype}</h1>
+                    <div className="triviaQuestionParagraph">{this.props.question}</div>
                 </div>
-                <div className="triviaChoices">
-                    {/* <button className="triviaChoice--btn">{Choices[1]}</button> */}
-                    
+                <div className="triviaChoices">                    
                     {  Choices.map((choice=>{return <button className="triviaChoice--btn"
                                                             value={choice}
                                                             key={choice}

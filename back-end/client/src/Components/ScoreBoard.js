@@ -11,9 +11,7 @@ state = {
     render(){
         return(
             <div className="div__scoreboard">
-                {/* <div className="timer"> */}
                     <h3>SCOREBOARD</h3>
-                {/* </div> */}
                 <div className="scoreboard--teams">
                     <div className="scoreboard--team">
                         <h3>TEAM {this.state.teams}</h3>

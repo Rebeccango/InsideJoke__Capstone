@@ -12,12 +12,6 @@ import Footer from '../layout/Footer';
 import soundfile from '../../Assets/Sounds/the_dating_game_1965.mp3';
 import Sound from 'react-sound';
 
-import TruthyFalseyCard from '../Cards/TruthyFalseyCard';
-import MultipleChoiceCard from '../Cards/MultipleChoiceCard';
-import AutoCompleteCard from '../Cards/AutoCompleteCard';
-
-
-
 export default class TriviaForm extends React.Component{ 
     constructor(){
         super();
@@ -30,12 +24,11 @@ export default class TriviaForm extends React.Component{
 
     playMode = (e) => {
         e.preventDefault();
-
         axios.get(`/jokes/${e.target.playgroup.value}`)
         .then((res)=>{
             var jokelist = res.data;
+            console.log(jokelist)
             this.setState({
-                playingGroup: e.target.playgroup.value,    
                 jokelist: jokelist,
                 listMax: jokelist.length - 1,
                 playing: 0
@@ -44,10 +37,7 @@ export default class TriviaForm extends React.Component{
         .catch((err)=>{
             console.log(err)
         })
-    }
-
-    startgame = () => {
-        console.log('start');
+        console.log('start game');
         this.setState({
             formdisplay: "hide",
             gamedisplay: "show",
@@ -66,18 +56,6 @@ export default class TriviaForm extends React.Component{
     }
 
     render(){
-        function cardType(type) {
-            switch(type){  
-                case jokeTypes[0]:
-                    return <TruthyFalseyCard/>;
-                case jokeTypes[1]:
-                    return <MultipleChoiceCard/>;
-                case jokeTypes[2]:
-                    return <AutoCompleteCard />;
-                default:
-                    return null;
-            }
-        }
         return(
         <>
         <Header user={this.props.user}/>
@@ -101,8 +79,7 @@ export default class TriviaForm extends React.Component{
                             </select>
                     </label>
                     <input type="submit" 
-                            className="next--btn"
-                            onClick={this.startgame}/>
+                            className="next--btn"/>
                 </fieldset>
             </form>
             <span className={this.state.gamedisplay}>
@@ -110,7 +87,7 @@ export default class TriviaForm extends React.Component{
                     <ScoreBoard/>
                 </div>
                 <div className="triviaCard">
-                    {cardType(jokeTypes[0])}
+                    <TriviaGame list={this.state.jokelist}/>
                 </div>
             </span>
         </main>

@@ -468,6 +468,13 @@ form .submit--btn {
 @media (min-width: 300px) {
   .scoreboard {
     bottom: -120px;
+    bottom: 90px;
+  }
+}
+
+@media (min-width: 300px) {
+  .scoreboard {
+    bottom: 83px;
   }
 }
 
@@ -547,11 +554,16 @@ form .submit--btn {
   color: #fbd157;
 }
 
-.fullquestion .triviaQuestionParagraph {
+.fullquestion .triviaQuestion {
+  color: #fbd157;
   width: 300px;
   padding: 1rem;
   background-color: #fbd157;
   margin: 2rem 0rem;
+}
+
+.yellow {
+  color: #fbd157;
 }
 
 .fullquestion--mc {
@@ -572,11 +584,12 @@ form .submit--btn {
   background-color: #53435B;
 }
 
-.fullquestion--mc h1 {
+.fullquestion--mc > *, .fullquestion--mc * {
   color: #fbd157;
 }
 
 .fullquestion--mc button {
   width: 300px;
+  color: #53435B;
 }
 /*# sourceMappingURL=App.css.map */

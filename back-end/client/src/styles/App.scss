@@ -391,6 +391,11 @@ select{
 
     @media (min-width: 300px) {
         bottom: -120px;
+        bottom: 90px;
+
+    }
+    @media (min-width: 300px) {
+        bottom: 83px;
     }
     @media (min-width: $tablet) {
         bottom: -75px;
@@ -452,13 +457,18 @@ select{
         color: $Primary;
     }
  background-color:  $Secondary;
-    .triviaQuestionParagraph{
+    .triviaQuestion{
+        color: $Primary;
         width: 300px;
         padding: 1rem;
         // height: 250px;
         background-color: $Primary;
         margin: 2rem 0rem;
     }
+}
+
+.yellow{
+    color: $Primary;
 }
 
 //TRUTHY FALSEY 
@@ -470,12 +480,12 @@ select{
     align-items: center;
     width: 500px;
     background-color:  $Secondary;
-
-    h1{
-        color: $Primary;
+    & > *, & *{
+        color: $Primary; 
     }
 
     button{
         width: 300px;
+        color: $Secondary; 
     }
 }
