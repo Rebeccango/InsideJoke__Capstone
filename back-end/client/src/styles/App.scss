@@ -1,6 +1,3 @@
-
-
-
 //VARIABLES 
     // Media query parameters
 $mobile: 320px;
@@ -12,43 +9,28 @@ $Secondary:#53435B;
 $Tertiary: #E76666;
 $label: white;
 $background: rgb(209, 224, 229);
-
     //font
 $font-family: 'Poppins', sans-serif;
-    //dimensions
-//MIXINS
-@mixin block-responsive{
-display: block;
-    @media (min-width: $tablet) {
-    display: inline-block;
-    }
-    @media (min-width: $desktop) {
-    display: inline-block;
-    }
-}
-
+//BUTTONS/CTA -----------------
 button{
     border-style: none;
     border-color: none;
     background-color: $Primary;
 }
-
-//LAYOUT 
-
-.hide {
-    display: none;
-}
-
-.show{
-    display: block;
-}
-
 .next--btn{
     padding: 0.25rem;
     width: 100px;
     margin: auto 0.75rem;
 }
 
+.hide {display: none;}
+
+.show{display: block;}
+
+.yellow{
+    color: $Primary;
+}
+//LAYOUT -------------------------------------------
 main{
     display: flex;
     flex-direction: column;
@@ -93,10 +75,7 @@ line-height: 10px;
     display: block;
 }
 //GENERAL----------------------------------
-*{
-    font-family: $font-family;
-    color: $Secondary; 
-}
+* {font-family: $font-family; color: $Secondary;}
 html{
     background-color:$background;
     margin: 0px;
@@ -109,6 +88,9 @@ header{
     position: fixed;
     width: 100%;
     background-color: $Primary;
+    @media (max-width: 350px) {
+        display: none;
+    }
     & > * {
         display: inline-block;
         width: 100px;
@@ -148,10 +130,6 @@ header{
         padding: 0rem 1rem;
         border: solid 1px grey;
     }
-}
-
-//Header with Links 
-header{
     .grouping{
         display: flex;
         align-items: center;
@@ -176,7 +154,7 @@ footer{
     background-color: $Primary;
     .companyName{
         text-align: center;
-        margin: 3rem;
+        margin: 1rem;
     }
 }
 //LANDING PAGE -----------------
@@ -209,27 +187,6 @@ footer{
     }
 }
 
-//FORMS
-.modalwrapper{
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: baseline;
-    width: 100%;
-    height: 105vh;
-    background-color: rgba(0, 0, 0, 0.5);
-    @media (min-width: 500px) {
-        align-items:center;
-        padding: 1rem;
-        height: 110vh;
-    }
-    @media (min-width: $tablet) {
-        align-items:center;
-        padding: 1rem;
-        height: 110vh;
-    }
-}
     .SignupPage{
         background-color: whitesmoke;
         border-radius: 4px;
@@ -238,14 +195,13 @@ footer{
         padding: 2rem 1.2rem;
         padding-top:100px;
         @media (min-width: 400px) {
-            // width: 500px;
             height: 800px;
         }
         @media (min-width: $tablet) {
             // width: 500px;
             height: 600px;
         }
-    .close--btn{
+    .close--btn{ 
         position: absolute;
         top: 8.5rem;
         right: 1rem; 
@@ -366,6 +322,10 @@ form{
 .newGroup{
  background-color: $Primary;
  text-align:center;
+ padding: 0.25rem;
+ position: relative;
+ right: 26px;
+ width: 145px;
 }
 ////TRIVIA FORM 
 .triviaForm{
@@ -389,51 +349,7 @@ select{
     border-style: none;   
     }
 }
-
-.scoreboard{
-    position: absolute;
-    bottom: -65px;
-    left: 0px;
-    text-align: center;
-    background-color: $Tertiary;   
-    width: 200px;
-
-    @media (min-width: 300px) {
-        bottom: -120px;
-        bottom: 90px;
-
-    }
-    @media (min-width: 300px) {
-        bottom: 83px;
-    }
-    @media (min-width: $tablet) {
-        bottom: -75px;
-    }
-    @media (min-width: $desktop) {
-        top: 115px;
-        bottom: 100px;
-    }
-
-    &:hover{
-        bottom: 32px;
-        @media (min-width: $tablet) {
-            bottom: 115px;
-        }    
-    }
-
-    * {
-    color: whitesmoke; 
-    }
-
-    & > * {
-     margin: 0.5rem;
-     border-radius: 4px;
-    }
-
-}
-
 ///RULES AND REGULATIONS -----------------
-
 .GameRulesPage{
     text-align: left;
     & > * {
@@ -443,8 +359,6 @@ select{
         text-align: center;
     }
 }
-
-
 //TEST -------------------------------------------
 .triviaChoice--btn{
     display: block;
@@ -481,10 +395,6 @@ select{
     }
 }
 
-.yellow{
-    color: $Primary;
-}
-
 //TRUTHY FALSEY 
 
 .fullquestion--mc{
@@ -492,16 +402,33 @@ select{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 500px;
+    width: 70vw;
+    padding: 1rem 2rem;
     margin: auto;
     margin-bottom: 3rem;    
+    height: 50vh;
+    background-color: #53435B;
     background-color:  $Secondary;
     & > *, & *{
         color: $Primary; 
     }
-
     button{
         width: 300px;
         color: $Secondary; 
     }
+
+    .triviachoice{
+        width: 65vw;
+        margin: 0.25rem;
+       }
+}
+
+//TRIVIA GAME DISPLAY 
+.triviaGameDisplay{
+    display: flex;
+    justify-content: center;
+}
+.scoreboard{
+    display: flex;
+    justify-content: space-evenly;
 }

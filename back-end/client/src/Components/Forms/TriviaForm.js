@@ -54,7 +54,6 @@ export default class TriviaForm extends React.Component{
                     <label> Select the number of teams/players participating: 
                             <select name="teams" type="select">
                                 <option value="1">One</option>
-                                <option value="2">Two</option>
                             </select>
                     </label>
                     <input type="submit" 

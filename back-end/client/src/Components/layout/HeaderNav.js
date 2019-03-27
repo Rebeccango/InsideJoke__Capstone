@@ -42,9 +42,6 @@ export default class Header extends React.Component{
                             <Link to="/rules">
                                 <h5 className="a--nav">Rules</h5>
                             </Link>
-                            <Link to="/review">
-                                <h5 className="a--nav">Review</h5>
-                            </Link>
                         </div>                        
                     </span>
                     <div className="nav--container">

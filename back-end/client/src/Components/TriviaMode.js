@@ -2,6 +2,7 @@ import React from 'react';
 
 import TriviaForm from '../Components/Forms/TriviaForm';
 import TriviaGame from '../Components/Cards/TriviaGame';
+import ScoreBoard from '../Components/ScoreBoard';
 
 export default class TriviaMode extends React.Component {
     constructor(props){
@@ -9,9 +10,9 @@ export default class TriviaMode extends React.Component {
         this.state = {
             user: "Guest",
             jokelist: ["hello","two"] ,
+            gamedisplay: "hide",
             playing: 1,
             listMax: 0,
-            answer: "hide",
             nWrong: 0,
             nRight: 0
         }
@@ -20,13 +21,13 @@ export default class TriviaMode extends React.Component {
     submitHandler = (list) => {
         this.setState({
             jokelist : list,
-            listMax: list.length -1
+            listMax: list.length -1,
+            gamedisplay: "show"
         })
     }
 
     questionHandler =(answer)=> {
-    //     // this method must do the following 
-        console.log(this)
+        // console.log(this)
     if(answer === this.state.jokelist[this.state.playing].answer){
          this.setState({
              nRight: this.state.nRight + 1
@@ -40,8 +41,6 @@ export default class TriviaMode extends React.Component {
          })
          window.alert("incorrect");
      }
-        console.log('answer');
-
         this.setState({
             playing: this.state.playing + 1
         })
@@ -52,10 +51,16 @@ export default class TriviaMode extends React.Component {
             <>
             {/* {this.state.playing === this.stat   e.listMax &&  <h1>You're done!</h1> } */}
                 <TriviaForm submitHandler={this.submitHandler}/>
-                <span className={this.state.gamediplay}>
-                    <TriviaGame list={this.state.jokelist}
-                                playing={this.state.playing}
-                                nextQuestion={this.questionHandler}/>
+                <span className={this.state.gamedisplay}>
+                    <div className="triviaGameDisplay">
+                        <TriviaGame list={this.state.jokelist}
+                                    playing={this.state.playing}
+                                    nextQuestion={this.questionHandler}/>
+                    </div>
+                    <span className={this.state.gamedisplay}>
+                        <ScoreBoard correct={this.state.nRight}
+                                    incorrect={this.state.nWrong}/>
+                    </span>
                 </span>
             </>
         )
