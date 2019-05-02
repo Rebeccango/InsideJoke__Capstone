@@ -34,7 +34,7 @@ button{
 main{
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+                ustify-content: flex-end;
     align-items: center;
     padding-top: 41vh   ;    
     padding-bottom: 10rem;
@@ -61,7 +61,7 @@ line-height: 10px;
     @media (min-width: $tablet) {
         font-size: 14px;
         line-height: 22px;
-    }
+    }  
 }
 //USER AVATAR ----------------------
 .userAvatar{

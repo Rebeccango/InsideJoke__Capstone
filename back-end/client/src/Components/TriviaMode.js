@@ -32,10 +32,10 @@ export default class TriviaMode extends React.Component {
          this.setState({
              nRight: this.state.nRight + 1
          })
-         window.alert("correct you are");
+         window.alert("Correct!");
      }
      else{
-         console.log('incorrect answer');
+         console.log('Wrong');
          this.setState({
              nWrong: this.state.nWrong + 1
          })
